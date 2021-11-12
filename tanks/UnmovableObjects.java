@@ -5,6 +5,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class UnmovableObjects extends Actor
 {
+    public UnmovableObjects() {
+        GreenfootImage image = getImage();
+        image.scale(50,50);
+    }
+    
     public void act()
     {
         // doesnt act as they are immovable

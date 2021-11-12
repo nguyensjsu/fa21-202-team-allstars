@@ -8,6 +8,7 @@ public class Brick extends UnmovableObjects
     int health;
     
     public Brick() {
+        super();
         health = 1;
     }
     

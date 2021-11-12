@@ -1,7 +1,0 @@
-#BlueJ class context
-comment0.target=Health0Strategy
-comment0.text=\n\ Write\ a\ description\ of\ class\ Health0Strategy\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=void\ display()
-comment1.text=\n\ Display\ the\ tank\ destroyed\ (after\ all\ the\ lives\ are\ lost)\n
-numComments=2

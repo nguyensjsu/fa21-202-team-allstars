@@ -9,7 +9,7 @@ public class Bullet extends Actor
     public Bullet() {
         setRotation(0);
         GreenfootImage image = getImage();
-        image.scale(image.getWidth() - 30, image.getHeight() - 30);
+        image.scale(40, 30);
     }
     public void act()
     {
