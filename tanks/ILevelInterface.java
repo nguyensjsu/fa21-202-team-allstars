@@ -5,9 +5,9 @@ import greenfoot.World;
  */
 public interface ILevelInterface{
     public void createLevel();
+    void setDaddy(World dec);
      // As of now No Sheild
     void newEnemyTank();
-
     boolean isPlayerOneALive();
     boolean isPlayerTwoALive();
 

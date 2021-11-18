@@ -1,7 +1,7 @@
 import java.util.Random;
 import greenfoot.*;
 
-public class LevelTwo extends World implements ILevelInterface {
+public class LevelTwo extends World{
 
     private LevelHandler levelHandler;
 
