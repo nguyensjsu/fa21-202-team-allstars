@@ -18,11 +18,13 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(700, 600, 1);
-        LevelOne one = new LevelOne();
-        LevelDecorator oneD = new LevelDecorator(one);
-        one.setDaddy(oneD);
-        Greenfoot.setWorld(oneD);
-        oneD.createLevel();
+        MainMenu mainMenu = new MainMenu();
+        Greenfoot.setWorld(mainMenu);
+        //LevelOne one = new LevelOne();
+        //LevelDecorator oneD = new LevelDecorator(one);
+        //one.setDaddy(oneD);
+        //Greenfoot.setWorld(oneD);
+        //oneD.createLevel();
     }
     
     
