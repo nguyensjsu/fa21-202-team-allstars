@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class AiTank extends Tank
+public class AiTank extends AbstractTank
 {
     /**
      * Act - do whatever the AiTank wants to do. This method is called whenever

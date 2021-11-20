@@ -32,9 +32,10 @@ public class LevelOne extends World implements ILevelInterface {
     public void newEnemyTank(){
         Random ran = new Random();
         int x = ran.nextInt(tankCordinates.length);
-        Tank tank =new P1Tank();
+        AbstractTank baseP1 = new P1Tank();
+        AbstractTank tank = new P1TankDecorator(baseP1);
         int[] location = tankCordinates[x];
-        dec.addObject(tank, location[0], location[1]);
+        dec.addObject(baseP1, location[0], location[1]);
         levelHandler.AITankCreated();
     }
 

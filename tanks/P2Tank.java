@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class P2Tank extends Tank
+public class P2Tank extends AbstractTank
 {
     /**
      * Act - do whatever the P2Tank wants to do. This method is called whenever

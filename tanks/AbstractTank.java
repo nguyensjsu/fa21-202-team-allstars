@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author Suresh Mula 
  * @version (a version number or a date)
  */
-public abstract class Tank extends Actor
+public abstract class AbstractTank extends Actor
 {
     static long bullet_interval = 200000000;
     long last_shot = -1;
@@ -14,7 +14,7 @@ public abstract class Tank extends Actor
      * Act - do whatever the Tank wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public Tank(){
+    public AbstractTank(){
         
     }
     
