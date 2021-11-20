@@ -1,7 +1,15 @@
 public interface NPCTankBrainStateInterface{
     //tentative list of events subject to change
-    public void hitEnemy();
-    public void seeEnemy();
-    public void seeFriend();
-    public void takeDamage();
+    public default void hitEnemy(){
+        return;
+    }
+    public default void seeEnemy(){
+        return;
+    }
+    public default void seeFriend(){
+        return;
+    }
+    public default void takeDamage(){
+        return;
+    }
 }

@@ -21,6 +21,7 @@ public class NPCTankBrain implements NPCTankBrainInterface{
         this.wander.setStateMachine(this);
         this.setToRestState();
     }
+    //events
     public void hitEnemy(){
         this.currentState.hitEnemy();
     }
@@ -33,6 +34,7 @@ public class NPCTankBrain implements NPCTankBrainInterface{
     public void takeDamage(){
         this.currentState.takeDamage();
     }
+    //statechanges
     public void setToAggroState(){
         this.currentState=this.aggro;
     }
