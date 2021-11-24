@@ -37,5 +37,8 @@ public abstract class Tank extends Actor
     public void reduceHealth(){
         health--;
     }
+    public int getHealth() {
+        return health;
+    }
     public abstract UnmovableObjects getObstacle(String direction);
 }
