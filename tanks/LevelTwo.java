@@ -23,7 +23,8 @@ public class LevelTwo extends World{
     public void newEnemyTank(){
         Random ran = new Random();
         int x = ran.nextInt(tankCordinates.length);
-        AbstractTank tank =new P1Tank();
+        P1Tank tank = new P1Tank();
+        // AbstractTank tank =new P1Tank();
         int[] location = tankCordinates[x];
         addObject(tank, location[0], location[1]);
         levelHandler.AITankCreated();
