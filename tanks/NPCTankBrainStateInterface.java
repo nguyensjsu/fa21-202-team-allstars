@@ -1,15 +1,9 @@
 public interface NPCTankBrainStateInterface{
     //tentative list of events subject to change
-    public default void hitEnemy(){
-        return;
-    }
-    public default void seeEnemy(){
-        return;
-    }
-    public default void seeFriend(){
-        return;
-    }
-    public default void takeDamage(){
-        return;
-    }
+    public void hitEnemy();
+    public void seeEnemy();
+    public void seeFriend();
+    public void seeNothing();
+    public void takeDamage();
+    public void zeroHealth();
 }
