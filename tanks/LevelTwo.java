@@ -1,17 +1,21 @@
 import java.util.Random;
 import greenfoot.*;
 
-public class LevelTwo extends World{
+public class LevelTwo extends World implements ILevelInterface{
 
     private LevelHandler levelHandler;
 
     private World nextLevel;
 
     static int[][] tankCordinates={{25,325},{425,575},{375,25},{675,225}};
-
+    World dec;
     public LevelTwo(){
         super(700,600,1);
         createLevel();
+    }
+    
+    public void setDaddy(World dec){
+        this.dec = dec;
     }
     
     public void createLevel(){
