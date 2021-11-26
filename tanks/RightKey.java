@@ -12,6 +12,8 @@ public class RightKey implements TankCommands
      * Constructor for objects of class RightKey
      */
     private Tank tank;
+    long bullet_interval = 200000000;
+    long last_shot = -1;
     public RightKey(Tank tank)
     {
         this.tank = tank;
@@ -19,13 +21,19 @@ public class RightKey implements TankCommands
 
     public void execute()
     {
-        // actor.setRotation(actor.getRotation()+90);
         int actorX = this.tank.getX();
         int actorY = this.tank.getY();
-        if(this.tank.getObstacle("right") == null){
-            this.tank.setLocation(actorX+2, actorY);
+        int x_offset;
+        int y_offset;
+        if(last_shot == -1 || System.nanoTime() - last_shot >= bullet_interval) {
+            if(tank.getRotation() == 0){
+                tank.turn(90);
+            }
+            else{
+                tank.turn(90);
+            }
+            last_shot = System.nanoTime();
+            System.out.println("Rot "+tank.getRotation());
         }
-        // Actor actor2 = getOneObjectAtOffset(400, 400, Actor.class);
-        
     }
 }

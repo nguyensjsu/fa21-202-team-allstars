@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;
 
 /**
  * Write a description of class P1Tank here.
@@ -12,6 +12,9 @@ public class P1Tank extends Tank
     private TankCommands leftKey;
     private TankCommands rightKey;
     private TankCommands downKey;
+    
+    static long bullet_interval = 200000000;
+    long last_shot = -1;
     /**
      * Act - do whatever the P1Tank wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -28,8 +31,6 @@ public class P1Tank extends Tank
     
     public void act()
     {
-        // if(Greenfoot.isKeyDown("space"))
-            // playerTank.shoot();
         if(Greenfoot.isKeyDown("left"))
             leftKey.execute();
         if(Greenfoot.isKeyDown("right"))
@@ -38,26 +39,69 @@ public class P1Tank extends Tank
             upKey.execute();
         if(Greenfoot.isKeyDown("down"))
             downKey.execute();
+        if(Greenfoot.isKeyDown("space"))
+            this.shoot();
     }
     
     public UnmovableObjects getObstacle(String direction){
         int actorX = getX();
         int actorY = getY();
         UnmovableObjects a = null;
+        int x_offset;
+        int y_offset;
+        int rotation = getRotation();    
         switch (direction) {
-            case "left":
-                a = (UnmovableObjects)getOneObjectAtOffset(-25, 0, Actor.class);
-                break;
-            case "right":
-                a = (UnmovableObjects)getOneObjectAtOffset(25, 0, Actor.class);
-                break;
             case "up":
-                a = (UnmovableObjects)getOneObjectAtOffset(0, -25, Actor.class);
+                    
+                if(rotation == 0) {
+                    a = (UnmovableObjects)getOneObjectAtOffset(25, 0, Actor.class);
+                }else if(rotation == 90) {
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, 25, Actor.class);
+                }else if(rotation == 180) {
+                    a = (UnmovableObjects)getOneObjectAtOffset(-25, 0, Actor.class);
+                }else{
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, -25, Actor.class);
+                }
                 break;
-            case "down":
-                a = (UnmovableObjects)getOneObjectAtOffset(0, 25, Actor.class);
+            case "down":    
+                if(rotation == 0) {
+                    a = (UnmovableObjects)getOneObjectAtOffset(-25, 0, Actor.class);
+                }else if(rotation == 90) {
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, -25, Actor.class);
+                }else if(rotation == 180) {
+                    a = (UnmovableObjects)getOneObjectAtOffset(25, 0, Actor.class);
+                }else{
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, 25, Actor.class);
+                }
                 break;
         }
         return a;
+    }
+    
+    public void shoot(){
+        if(last_shot == -1 || System.nanoTime() - last_shot >= bullet_interval) {
+            Bullet bullet = new Bullet();
+            int x_offset;
+            int y_offset;
+            int rotation = getRotation();
+            
+            if(rotation == 0) {
+                x_offset = 10;
+                y_offset = 0;
+            }else if(rotation == 90) {
+                x_offset = 0;
+                y_offset = 10;
+            }else if(rotation == 180) {
+                x_offset = -10;
+                y_offset = 0;
+            }else{
+                x_offset = 0;
+                y_offset = -10;
+            }
+            bullet.setRotation(rotation);
+            getWorld().addObject(bullet, getX() + x_offset, getY() + y_offset);
+            
+            last_shot = System.nanoTime();
+        }
     }
 }

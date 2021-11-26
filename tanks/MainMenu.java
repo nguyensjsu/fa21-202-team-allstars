@@ -22,10 +22,7 @@ public class MainMenu extends World
     public void showMainMenu(){
         Menu menu = new Menu();
         addObject(menu, 350, 225);
-        OneButton oneButton = new OneButton();
-        addObject(oneButton, 350, 250);
-        
-        TwoButton twoButton = new TwoButton();
-        addObject(twoButton, 350, 375);
+        Start start = new Start();
+        addObject(start, 350, 250);
     }
 }
