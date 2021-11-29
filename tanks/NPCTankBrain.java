@@ -1,32 +1,24 @@
 import java.util.ArrayList;
 public class NPCTankBrain implements NPCTankBrainInterface{
-    private AggroState aggro;
     private DamagedState damaged;
     private DefeatState defeat;
-    private FleeState flee;
+    private DriveBackwardState driveBackward;
+    private DriveForwardState driveForward;
     private RestState rest;
-    private SearchState search;
     private ShootState shoot;
-    private WanderState wander;
+    private TurnLeftState turnLeft;
+    private TurnRightState turnRight;
     private NPCTankBrainStateInterface currentState;
     private ArrayList<NPCTankBrainObserverInterface> observers;
     public NPCTankBrain(){
-        this.aggro=new AggroState();
-        this.aggro.setStateMachine(this);
-        this.damaged=new DamagedState();
-        this.damaged.setStateMachine(this);
-        this.defeat=new DefeatState();
-        this.defeat.setStateMachine(this);
-        this.flee=new FleeState();
-        this.flee.setStateMachine(this);
-        this.rest=new RestState();
-        this.rest.setStateMachine(this);
-        this.search=new SearchState();
-        this.search.setStateMachine(this);
-        this.shoot=new ShootState();
-        this.shoot.setStateMachine(this);
-        this.wander=new WanderState();
-        this.wander.setStateMachine(this);
+        this.damaged=new DamagedState(this);        
+        this.defeat=new DefeatState(this);        
+        this.driveBackward=new DriveBackwardState(this);
+        this.driveForward=new DriveForwardState(this);
+        this.rest=new RestState(this);
+        this.shoot=new ShootState(this);
+        this.turnLeft=new TurnLeftState(this);
+        this.turnRight=new TurnRightState(this);
         this.setToRestState();
     }
     //handling observers
@@ -39,9 +31,6 @@ public class NPCTankBrain implements NPCTankBrainInterface{
         }
     }
     //handling events
-    public void hitEnemy(){
-        this.currentState.hitEnemy();
-    }
     public void seeEnemy(){
         this.currentState.seeEnemy();
     }
@@ -50,6 +39,9 @@ public class NPCTankBrain implements NPCTankBrainInterface{
     }
     public void seeNothing(){
         this.currentState.seeNothing();
+    }
+    public void seeWall(){
+        this.currentState.seeWall();
     }
     public void takeDamage(){
         this.currentState.takeDamage();
@@ -61,10 +53,6 @@ public class NPCTankBrain implements NPCTankBrainInterface{
     public NPCTankBrainStateInterface getState(){
         return this.currentState;
     }
-    public void setToAggroState(){
-        this.currentState=this.aggro;
-        this.notifyObservers();
-    }
     public void setToDamagedState(){
         this.currentState=this.damaged;
         this.notifyObservers();
@@ -73,24 +61,28 @@ public class NPCTankBrain implements NPCTankBrainInterface{
         this.currentState=this.defeat;
         this.notifyObservers();
     }
-    public void setToFleeState(){
-        this.currentState=this.flee;
+    public void setToDriveBackwardState(){
+        this.currentState=this.driveBackward;
+        this.notifyObservers();
+    }
+    public void setToDriveForwardState(){
+        this.currentState=this.driveForward;
         this.notifyObservers();
     }
     public void setToRestState(){
         this.currentState=this.rest;
         this.notifyObservers();
     }
-    public void setToSearchState(){
-        this.currentState=this.search;
-        this.notifyObservers();
-    }
     public void setToShootState(){
         this.currentState=this.shoot;
         this.notifyObservers();
     }
-    public void setToWanderState(){
-        this.currentState=this.wander;
+    public void setToTurnLeftState(){
+        this.currentState=this.turnLeft;
+        this.notifyObservers();
+    }
+    public void setToTurnRightState(){
+        this.currentState=this.turnRight;
         this.notifyObservers();
     }
 }

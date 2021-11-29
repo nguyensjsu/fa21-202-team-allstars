@@ -1,24 +1,15 @@
+import java.util.Random;
 public abstract class NullState implements NPCTankBrainStateInterface{
     protected NPCTankBrainInterface stateMachine;
-    public void setStateMachine(NPCTankBrainInterface stateMachine){
+    protected Random rng;
+    public NullState(){
+        this.rng=new Random();
+    }
+    public NullState(NPCTankBrainInterface stateMachine){
+        this();
         this.stateMachine=stateMachine;
     }
-    public void hitEnemy(){
-        return;
-    }
-    public void seeEnemy(){
-        return;
-    }
-    public void seeFriend(){
-        return;
-    }
-    public void seeNothing(){
-        return;
-    }
-    public void takeDamage(){
-        return;
-    }
-    public void zeroHealth(){
-        this.stateMachine.setToDefeatState();
+    public void setStateMachine(NPCTankBrainInterface stateMachine){
+        this.stateMachine=stateMachine;
     }
 }
