@@ -20,9 +20,11 @@ public class MainMenu extends World
         showMainMenu();
     }
     public void showMainMenu(){
-        Menu menu = new Menu();
+      Menu menu = new Menu();
         addObject(menu, 350, 225);
-        Start start = new Start();
-        addObject(start, 350, 250);
+        OneButton oneButton = new OneButton();
+        TwoButton twoButton = new TwoButton();
+        addObject(oneButton,350,275);
+        addObject(twoButton,350,425);
     }
 }
