@@ -22,10 +22,8 @@ public class TwoButton extends Actor
         if (Greenfoot.mousePressed(this))
     {
         LevelTwo two = new LevelTwo();
-        LevelDecorator twoD = new LevelDecorator(two);
-        two.setDaddy(twoD);
-        Greenfoot.setWorld(twoD);
-        twoD.createLevel();
+        LevelBuilder levelBuilder = new LevelBuilder(two);
+        levelBuilder.buildLevel();
     }
     }
 }

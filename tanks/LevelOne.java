@@ -10,7 +10,6 @@ public class LevelOne extends World implements ILevelInterface {
     World dec;
     public LevelOne(){
         super(700, 600, 1);
-        //createLevel();
     }
     
     public void setDaddy(World dec){
@@ -21,7 +20,6 @@ public class LevelOne extends World implements ILevelInterface {
         levelHandler = new LevelHandler();
         createBricks();
         newEnemyTank();
-        nextLevel = new LevelTwo();
     }
 
     public void moveToNextLevel(){

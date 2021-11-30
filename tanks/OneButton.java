@@ -22,10 +22,8 @@ public class OneButton extends Actor
         if (Greenfoot.mousePressed(this))
     {
         LevelOne one = new LevelOne();
-        LevelDecorator oneD = new LevelDecorator(one);
-        one.setDaddy(oneD);
-        Greenfoot.setWorld(oneD);
-        oneD.createLevel();
+        LevelBuilder levelBuilder = new LevelBuilder(one);
+        levelBuilder.buildLevel();
     }
     }
 }
