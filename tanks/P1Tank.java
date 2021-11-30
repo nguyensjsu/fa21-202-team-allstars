@@ -54,24 +54,24 @@ public class P1Tank extends Tank
             case "up":
                     
                 if(rotation == 0) {
-                    a = (UnmovableObjects)getOneObjectAtOffset(25, 0, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(25, 0, UnmovableObjects.class);
                 }else if(rotation == 90) {
-                    a = (UnmovableObjects)getOneObjectAtOffset(0, 25, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, 25, UnmovableObjects.class);
                 }else if(rotation == 180) {
-                    a = (UnmovableObjects)getOneObjectAtOffset(-25, 0, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(-25, 0, UnmovableObjects.class);
                 }else{
-                    a = (UnmovableObjects)getOneObjectAtOffset(0, -25, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, -25, UnmovableObjects.class);
                 }
                 break;
             case "down":    
                 if(rotation == 0) {
-                    a = (UnmovableObjects)getOneObjectAtOffset(-25, 0, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(-25, 0, UnmovableObjects.class);
                 }else if(rotation == 90) {
-                    a = (UnmovableObjects)getOneObjectAtOffset(0, -25, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, -25, UnmovableObjects.class);
                 }else if(rotation == 180) {
-                    a = (UnmovableObjects)getOneObjectAtOffset(25, 0, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(25, 0, UnmovableObjects.class);
                 }else{
-                    a = (UnmovableObjects)getOneObjectAtOffset(0, 25, Actor.class);
+                    a = (UnmovableObjects)getOneObjectAtOffset(0, 25, UnmovableObjects.class);
                 }
                 break;
         }

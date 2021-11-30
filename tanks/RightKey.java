@@ -33,7 +33,7 @@ public class RightKey implements TankCommands
                 tank.turn(90);
             }
             last_shot = System.nanoTime();
-            System.out.println("Rot "+tank.getRotation());
+            //System.out.println("Rot "+tank.getRotation());
         }
     }
 }

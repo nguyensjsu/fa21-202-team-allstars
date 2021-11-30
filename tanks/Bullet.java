@@ -5,7 +5,7 @@ import java.util.List;
  */
 public class Bullet extends Actor
 {
-    static int speed = 2;
+    static int speed = 5;
     public Bullet() {
         setRotation(0);
         GreenfootImage image = getImage();
@@ -17,13 +17,13 @@ public class Bullet extends Actor
         
         if(isAtEdge()) {
             getWorld().removeObject(this);
-        }
-        
-        List<UnmovableObjects> list =  getIntersectingObjects(UnmovableObjects.class);
-        if( list.size() > 0){
-            for(UnmovableObjects o: list)
-                o.bulletCollision();
-            getWorld().removeObject(this);
+        } else {
+            List<UnmovableObjects> list =  getIntersectingObjects(UnmovableObjects.class);
+            if( list.size() > 0){
+                for(UnmovableObjects o: list)
+                    o.bulletCollision();
+                getWorld().removeObject(this);
+            }
         }
     }
     
