@@ -1,6 +1,7 @@
 public class LevelHandler {
 
-    static final int AI_TANK_LIMIT = 10;
+    static final int AI_TANK_TOTAL = 10;
+    
     static final int PLAYER_DEAFULT_LIVES = 3;
     static final int PLAYER_DEAFULT_HEALTH = 100;
 
@@ -66,7 +67,7 @@ public class LevelHandler {
     }
 
     private int[] getAITankStatus() {
-        int[] AITankStatus = {AI_TANK_LIMIT - this.currentAITankCount, this.currentAITankCount};
+        int[] AITankStatus = {AI_TANK_TOTAL - this.currentAITankCount, this.currentAITankCount};
         return AITankStatus;
     }
 
@@ -81,6 +82,12 @@ public class LevelHandler {
 
     public void AITankCreated(){
         this.currentAITankCount++;
+    }
+    
+    public boolean isCreatingAIPossible(){
+        if(currentAITankCount >= AI_TANK_TOTAL)
+            return false;
+        return true;
     }
     
 }
