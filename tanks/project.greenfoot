@@ -1,6 +1,6 @@
 #Greenfoot project file
 class.Brick.image=brick.jpg
-class.Bullet.image=rocket.png
+class.Bullet.image=bullet.png
 class.Exit.image=exit.png
 class.Menu.image=Menu.png
 class.NPCTank.image=AI_Tank.png
