@@ -3,6 +3,7 @@ public interface NPCTankBrainInterface extends NPCTankBrainStateInterface{
     public void attachObserver(NPCTankBrainObserverInterface observer);
     public void notifyObservers();
     //handling state changes
+    public NPCTankBrainStateInterface getState();
     public void setToDamagedState();
     public void setToDefeatState();
     public void setToDriveBackwardState();
