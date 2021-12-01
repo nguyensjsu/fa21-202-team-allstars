@@ -19,6 +19,7 @@ public class NPCTankBrain implements NPCTankBrainInterface{
         this.shoot=new ShootState(this);
         this.turnLeft=new TurnLeftState(this);
         this.turnRight=new TurnRightState(this);
+        this.observers=new ArrayList<NPCTankBrainObserverInterface>();
         this.setToRestState();
     }
     //handling observers
@@ -26,8 +27,10 @@ public class NPCTankBrain implements NPCTankBrainInterface{
         observers.add(newObserver);
     }
     public void notifyObservers(){
-        for(int i=0;i<observers.size();i++){
-            observers.get(i).update(this);
+        if(!observers.isEmpty()){
+            for(int i=0;i<observers.size();i++){
+                observers.get(i).update(this);
+            }
         }
     }
     //handling events
