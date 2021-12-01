@@ -66,98 +66,85 @@ public class LevelTwo extends World implements ILevelInterface{
 
     public void createBricks() {
         Brick brick1 = new Brick();
-        dec.addObject(brick1,75,25);
+        dec.addObject(brick1,125,25);
         Brick brick2 = new Brick();
-        dec.addObject(brick2,75,75);
+        dec.addObject(brick2,175,75);
         Brick brick3 = new Brick();
-        dec.addObject(brick3,75,125);
-        Brick brick4 = new Brick();
-        dec.addObject(brick4,75,175);
-        Brick brick5 = new Brick();
-        dec.addObject(brick5,75,225);
+        dec.addObject(brick3,75,175);
+
         Brick brick6 = new Brick();
         dec.addObject(brick6,75,275);
         Brick brick7 = new Brick();
-        dec.addObject(brick7,125,275);
-        Brick brick8 = new Brick();
-        dec.addObject(brick8,175,275);
+        dec.addObject(brick7,125,325);
+        Unbreakable unbreakable3 = new Unbreakable();
+        dec.addObject(unbreakable3,175,275);
         Brick brick9 = new Brick();
-        dec.addObject(brick9,225,275);
+        dec.addObject(brick9,225,225);
         Brick brick10 = new Brick();
         dec.addObject(brick10,275,275);
         Brick brick11 = new Brick();
         dec.addObject(brick11,325,275);
         Brick brick12 = new Brick();
-        dec.addObject(brick12,25,275);
+        dec.addObject(brick12,25,225);
 
-        //Square Bricks for Shield
         Brick brick14 = new Brick();
         dec.addObject(brick14,375,575);
         Brick brick15 = new Brick();
         dec.addObject(brick15,375,525);
-        Brick brick16 = new Brick();
-        dec.addObject(brick16,425,475);
+
         Brick brick17 = new Brick();
         dec.addObject(brick17,475,525);
         Brick brick18 = new Brick();
         dec.addObject(brick18,475,575);
-        Brick brick19 = new Brick();
-        dec.addObject(brick19,375,475);
-        Brick brick20 = new Brick();
-        dec.addObject(brick20,475,475);
 
-        Brick brick21 = new Brick();
-        dec.addObject(brick21,325,225);
+        Unbreakable unbreakable8 = new Unbreakable();
+        dec.addObject(unbreakable8,325,225);
         Brick brick22 = new Brick();
         dec.addObject(brick22,325,175);
-        Brick brick23 = new Brick();
-        dec.addObject(brick23,325,225);
         Brick brick24 = new Brick();
         dec.addObject(brick24,325,175);
         Brick brick25 = new Brick();
         dec.addObject(brick25,325,125);
-        Brick brick26 = new Brick();
-        dec.addObject(brick26,325,75);
+        Unbreakable unbreakable9 = new Unbreakable();
+        dec.addObject(unbreakable9,325,75);
         Brick brick27 = new Brick();
         dec.addObject(brick27,325,25);
 
         Brick brick28 = new Brick();
         dec.addObject(brick28,125,125);
-        Brick brick29 = new Brick();
-        dec.addObject(brick29,175,125);
+        Unbreakable unbreakable2 = new Unbreakable();
+        dec.addObject(unbreakable2,175,125);
         Brick brick30 = new Brick();
         dec.addObject(brick30,225,125);
         Brick brick31 = new Brick();
         dec.addObject(brick31,275,125);
 
         Brick brick32 = new Brick();
-        dec.addObject(brick32,25,375);
+        dec.addObject(brick32,25,425);
         Brick brick33 = new Brick();
         dec.addObject(brick33,75,375);
-        Brick brick34 = new Brick();
-        dec.addObject(brick34,125,375);
+        
+
         Brick brick35 = new Brick();
         dec.addObject(brick35,175,375);
-        Brick brick36 = new Brick();
-        dec.addObject(brick36,225,375);
+
         Brick brick37 = new Brick();
         dec.addObject(brick37,275,375);
         Brick brick38 = new Brick();
         dec.addObject(brick38,325,375);
-        Brick brick39 = new Brick();
-        dec.addObject(brick39,375,375);
+        Unbreakable unbreakable10 = new Unbreakable();
+        dec.addObject(unbreakable10,375,375);
         Brick brick40 = new Brick();
-        dec.addObject(brick40,425,375);
+        dec.addObject(brick40,425,425);
         Brick brick41 = new Brick();
         dec.addObject(brick41,475,375);
-        Brick brick42 = new Brick();
-        dec.addObject(brick42,525,375);
+
         Brick brick43 = new Brick();
         dec.addObject(brick43,575,375);
         Brick brick44 = new Brick();
         dec.addObject(brick44,625,375);
-        Brick brick45 = new Brick();
-        dec.addObject(brick45,675,375);
+        Unbreakable unbreakable7 = new Unbreakable();
+        dec.addObject(unbreakable7,675,375);
 
         Brick brick46 = new Brick();
         dec.addObject(brick46,125,425);
@@ -165,8 +152,8 @@ public class LevelTwo extends World implements ILevelInterface{
         dec.addObject(brick47,175,475);
         Brick brick48 = new Brick();
         dec.addObject(brick48,225,525);
-        Brick brick49 = new Brick();
-        dec.addObject(brick49,275,575);
+        Unbreakable unbreakable6 = new Unbreakable();
+        dec.addObject(unbreakable6,275,575);
         Brick brick50 = new Brick();
         dec.addObject(brick50,225,425);
         Brick brick51 = new Brick();
@@ -184,11 +171,9 @@ public class LevelTwo extends World implements ILevelInterface{
         dec.addObject(brick56,675,575);
         Brick brick57 = new Brick();
         dec.addObject(brick57,575,575);
-        Brick brick58 = new Brick();
-        dec.addObject(brick58,525,525);
 
-        Brick brick59 = new Brick();
-        dec.addObject(brick59,25,475);
+        Unbreakable unbreakable5 = new Unbreakable();
+        dec.addObject(unbreakable5,25,475);
         Brick brick60 = new Brick();
         dec.addObject(brick60,75,525);
         Brick brick61 = new Brick();
@@ -197,17 +182,15 @@ public class LevelTwo extends World implements ILevelInterface{
         dec.addObject(brick62,675,575);
         Brick brick63 = new Brick();
         dec.addObject(brick63,575,575);
-        Brick brick64 = new Brick();
-        dec.addObject(brick64,525,525);
-        Brick brick65 = new Brick();
-        dec.addObject(brick65,325,325);
+
+        
 
         Brick brick66 = new Brick();
         dec.addObject(brick66,425,225);
         Brick brick67 = new Brick();
         dec.addObject(brick67,475,175);
-        Brick brick68 = new Brick();
-        dec.addObject(brick68,525,125);
+        Unbreakable unbreakable1 = new Unbreakable();
+        dec.addObject(unbreakable1,525,125);
         Brick brick69 = new Brick();
         dec.addObject(brick69,475,75);
         Brick brick70 = new Brick();
@@ -227,7 +210,7 @@ public class LevelTwo extends World implements ILevelInterface{
         Brick brick77 = new Brick();
         dec.addObject(brick77,475,275);
         Brick brick78 = new Brick();
-        dec.addObject(brick78,525,275);
+        dec.addObject(brick78,525,325);
         Brick brick79 = new Brick();
         dec.addObject(brick79,625,325);
 
@@ -236,8 +219,10 @@ public class LevelTwo extends World implements ILevelInterface{
         brick81.setLocation(425,325);
         Brick brick80 = new Brick();
         dec.addObject(brick80,475,275);
-        Brick brick = new Brick();
-        dec.addObject(brick,625,125);
+        Unbreakable unbreakable4 = new Unbreakable();
+        dec.addObject(unbreakable4,625,125);
+        Unbreakable unbreakable = new Unbreakable();
+        dec.addObject(unbreakable,425,475);
     
     }
 
