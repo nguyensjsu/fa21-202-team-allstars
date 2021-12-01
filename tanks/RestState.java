@@ -14,11 +14,43 @@ public class RestState extends NullState{
         this.stateMachine.setToDriveForwardState();
     }
     public void seeNothing(){
-        //fill in later
-        //roll on DriveBackward/DriveForward/TurnLeft/TurnRight/Restx5
-        return;
+        int roll=rng.nextInt(9);
+        if(roll<1){
+            this.stateMachine.setToDriveBackwardState();
+        }
+        else if(roll<2){
+            this.stateMachine.setToDriveForwardState();
+        }
+        else if(roll<3){
+            this.stateMachine.setToTurnLeftState();
+        }
+        else if(roll<4){
+            this.stateMachine.setToTurnRightState();
+        }
+        else{
+            this.stateMachine.setToRestState();
+        }
     }
     public void seeWall(){
+        int roll=rng.nextInt(10);
+        if(roll<1){
+            this.stateMachine.setToDriveBackwardState();
+        }
+        else if(roll<2){
+            this.stateMachine.setToDriveForwardState();
+        }
+        else if(roll<3){
+            this.stateMachine.setToTurnLeftState();
+        }
+        else if(roll<4){
+            this.stateMachine.setToTurnRightState();
+        }
+        else if(roll<10){
+            this.stateMachine.setToRestState();
+        }
+        else{
+            this.stateMachine.setToShootState();
+        }
         //fill in later
         //roll on DriveBackward/DriveForward/TurnLeft/TurnRight/Restx5
         return;

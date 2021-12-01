@@ -32,51 +32,53 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
         if(sight==null){
             this.brain.seeNothing();
         }
-        else if(sight.getClass().toString()=="P1Tank"){
-            this.brain.seeEnemy();
-        }
-        else if(sight.getClass().toString()=="P2Tank"){
-            this.brain.seeEnemy();
-        }
-        else if(sight.getClass().toString()=="NPCTank"){
-            this.brain.seeFriend();
-        }
-        else if(sight.getClass().toString()=="Brick"){
-            this.brain.seeWall();
-        }
         else{
-            this.brain.seeNothing();
+            String sightString=sight.getClass().toString().substring(6);
+            if(sightString.equals("P1Tank")){
+                this.brain.seeEnemy();
+            }
+            else if(sightString.equals("P2Tank")){
+                this.brain.seeEnemy();
+            }
+            else if(sightString.equals("NPCTank")){
+                this.brain.seeFriend();
+            }
+            else if(sightString.equals("Brick")){
+                this.brain.seeWall();
+            }
+            else{
+                this.brain.seeNothing();
+            }
         }
     }
     private void executeAction(){
-        if(this.nextAction=="DamagedState"){
+        if(this.nextAction.equals("DamagedState")){
             //
         }
-        else if(this.nextAction=="DefeatState"){
+        else if(this.nextAction.equals("DefeatState")){
             //
         }
-        else if(this.nextAction=="DriveBackwardState"){
+        else if(this.nextAction.equals("DriveBackwardState")){
             downKey.execute();
         }
-        else if(this.nextAction=="DriveForwardState"){
+        else if(this.nextAction.equals("DriveForwardState")){
             upKey.execute();
         }
-        else if(this.nextAction=="RestState"){
+        else if(this.nextAction.equals("RestState")){
             //
         }
-        else if(this.nextAction=="TurnLeftState"){
+        else if(this.nextAction.equals("TurnLeftState")){
             leftKey.execute();
         }
-        else if(this.nextAction=="ShootState"){
+        else if(this.nextAction.equals("ShootState")){
             this.shoot();
         }
-        else if(this.nextAction=="TurnRightState"){
+        else if(this.nextAction.equals("TurnRightState")){
             rightKey.execute();
         }
     }
     public void update(NPCTankBrainInterface observed){
-        this.nextAction=observed.getState().getClass().toString();
-        System.out.println(this.nextAction);//just for debugging, remember to delete
+        this.nextAction=observed.getState().getClass().toString().substring(6);
     }
     private Actor lookAhead(int distance){
         int increment=25;
