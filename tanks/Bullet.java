@@ -9,7 +9,7 @@ public class Bullet extends Actor
     public Bullet() {
         setRotation(0);
         GreenfootImage image = getImage();
-        image.scale(40, 30);
+        image.scale(30, 30);
     }
     public void act()
     {
@@ -18,11 +18,23 @@ public class Bullet extends Actor
         if(isAtEdge()) {
             getWorld().removeObject(this);
         } else {
+            boolean removed = false;
             List<UnmovableObjects> list =  getIntersectingObjects(UnmovableObjects.class);
             if( list.size() > 0){
                 for(UnmovableObjects o: list)
                     o.bulletCollision();
                 getWorld().removeObject(this);
+                removed = true;
+            }
+            
+            if(! removed) {
+                List<Tank> list2 =  getIntersectingObjects(Tank.class);
+                if( list.size() > 0){
+                    for(Tank o: list2)
+                        o.bulletCollision();
+                    getWorld().removeObject(this);
+                    removed = true;
+                }
             }
         }
     }

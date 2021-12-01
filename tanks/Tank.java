@@ -96,4 +96,8 @@ public abstract class Tank extends Actor
         }
         return a;
     }
+    
+    public void bulletCollision() {
+        reduceHealth();
+    }
 }
