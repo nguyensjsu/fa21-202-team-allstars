@@ -10,6 +10,7 @@ public abstract class Tank extends Actor
 {
     private int health;
      static long bullet_interval = 200000000;
+    static final int bullet_offset = 25;
     long last_shot = -1;
     public Tank()
     {
@@ -24,17 +25,17 @@ public abstract class Tank extends Actor
             int rotation = getRotation();
             
             if(rotation == 0) {
-                x_offset = 10;
+                x_offset = bullet_offset;
                 y_offset = 0;
             }else if(rotation == 90) {
                 x_offset = 0;
-                y_offset = 10;
+                y_offset = bullet_offset;
             }else if(rotation == 180) {
-                x_offset = -10;
+                x_offset = -bullet_offset;
                 y_offset = 0;
             }else{
                 x_offset = 0;
-                y_offset = -10;
+                y_offset = -bullet_offset;
             }
             bullet.setRotation(rotation);
             getWorld().addObject(bullet, getX() + x_offset, getY() + y_offset);
