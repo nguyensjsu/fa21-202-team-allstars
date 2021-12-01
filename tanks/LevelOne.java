@@ -32,7 +32,7 @@ public class LevelOne extends World implements ILevelInterface {
         P1Tank p1Tank = new P1Tank();
         //int x = ran.nextInt(tankCordinates.length);
         P2Tank p2Tank = new P2Tank();
-        AiTank aiTank = new AiTank();
+        NPCTank aiTank = new NPCTank();
         
         int[] location1 = tankCordinates[0];
         dec.addObject(p1Tank, location1[0], location1[1]);

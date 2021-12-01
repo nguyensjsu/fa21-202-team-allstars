@@ -56,7 +56,7 @@ public class LevelDecorator extends World implements ILevelInterface
         P2PlaceHolder.setImage(new P2Tank().getImage());
         
         AIPlaceHolder = new PlaceHolders();
-        AIPlaceHolder.setImage(new AiTank().getImage());
+        AIPlaceHolder.setImage(new NPCTank().getImage());
         
         P1PlaceHolderLives = new PlaceHolders();
         P2PlaceHolderLives = new PlaceHolders();
