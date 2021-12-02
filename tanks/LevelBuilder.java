@@ -23,7 +23,7 @@ public class LevelBuilder
     
     public void buildLevel(){
         LevelDecorator levelDecorator = new LevelDecorator(level);
-        level.setDaddy(levelDecorator);
+        level.setWorld(levelDecorator);
         Greenfoot.setWorld(levelDecorator);
         levelDecorator.createLevel();
     }

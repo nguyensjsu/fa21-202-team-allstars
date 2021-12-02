@@ -24,7 +24,7 @@ public class LevelDecorator extends World implements ILevelInterface
         this.base = base;
     }
     
-    public void setDaddy(World dec) {
+    public void setWorld(World dec) {
         //do nothing
     }
     
@@ -98,7 +98,7 @@ public class LevelDecorator extends World implements ILevelInterface
     
     private void setBackground() {
         GreenfootImage image = getBackground();
-        image.setColor(Color.BLUE);
+        image.setColor(Color.LIGHT_GRAY);
         image.fillRect(700, 0, 200, 600);
     }
     

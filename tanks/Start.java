@@ -23,7 +23,7 @@ public class Start extends Actor
     {
         LevelOne one = new LevelOne();
         LevelDecorator oneD = new LevelDecorator(one);
-        one.setDaddy(oneD);
+        one.setWorld(oneD);
         Greenfoot.setWorld(oneD);
         oneD.createLevel();
     }

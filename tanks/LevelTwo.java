@@ -15,9 +15,10 @@ public class LevelTwo extends World implements ILevelInterface{
     World dec;
     public LevelTwo(){
         super(700,600,1);
+        dec = this;
     }
     
-    public void setDaddy(World dec){
+    public void setWorld(World dec){
         this.dec = dec;
     }
     
