@@ -28,19 +28,18 @@ public class P2Tank extends Tank
     
     public void act()
     {
-        if(Greenfoot.isKeyDown("R"))
-            this.shoot();
-        if(Greenfoot.isKeyDown("A"))
-            this.leftKey.execute();
-        if(Greenfoot.isKeyDown("D"))
-            this.rightKey.execute();
-        if(Greenfoot.isKeyDown("W"))
-            this.upKey.execute();
-        if(Greenfoot.isKeyDown("S"))
-            this.downKey.execute();
+        if(this.health>0){
+            if(Greenfoot.isKeyDown("R"))
+                this.shoot();
+            if(Greenfoot.isKeyDown("A"))
+                this.leftKey.execute();
+            if(Greenfoot.isKeyDown("D"))
+                this.rightKey.execute();
+            if(Greenfoot.isKeyDown("W"))
+                this.upKey.execute();
+            if(Greenfoot.isKeyDown("S"))
+                this.downKey.execute();
+        }
     }
     
-    public void bulletCollision(){
-        
-    }
 }

@@ -8,7 +8,7 @@ import greenfoot.Actor;
  */
 public abstract class Tank extends Actor
 {
-    private int health;
+    int health;
      static long bullet_interval = 200000000;
     static final int bullet_offset = 40;
     long last_shot = -1;
@@ -103,5 +103,12 @@ public abstract class Tank extends Actor
     }
     
 
-    public abstract void bulletCollision();
+    public void bulletCollision(){
+        reduceHealth();
+        
+        if(getHealth() == 0){
+            strategy = health0;
+        }
+        strategy.display(this);
+    }
 }

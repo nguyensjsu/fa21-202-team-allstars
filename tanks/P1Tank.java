@@ -29,19 +29,17 @@ public class P1Tank extends Tank
     
     public void act()
     {
-        if(Greenfoot.isKeyDown("left"))
-            leftKey.execute();
-        if(Greenfoot.isKeyDown("right"))
-            rightKey.execute();
-        if(Greenfoot.isKeyDown("up"))
-            upKey.execute();
-        if(Greenfoot.isKeyDown("down"))
-            downKey.execute();
-        if(Greenfoot.isKeyDown("space"))
-            this.shoot();
-    }
-    
-    public void bulletCollision(){
-        
+        if(this.health>0){
+            if(Greenfoot.isKeyDown("left"))
+                leftKey.execute();
+            if(Greenfoot.isKeyDown("right"))
+                rightKey.execute();
+            if(Greenfoot.isKeyDown("up"))
+                upKey.execute();
+            if(Greenfoot.isKeyDown("down"))
+                downKey.execute();
+            if(Greenfoot.isKeyDown("space"))
+                this.shoot();
+        }    
     }
 }
