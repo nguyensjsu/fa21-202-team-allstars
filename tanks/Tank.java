@@ -109,4 +109,7 @@ public abstract class Tank extends Actor
         }
         strategy.display(this) ;
     }
+=======
+    public abstract void bulletCollision();
+>>>>>>> Stashed changes
 }

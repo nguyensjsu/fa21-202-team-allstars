@@ -51,6 +51,14 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
             }
         }
     }
+    
+    public void bulletCollision(){
+        ScoreManager.addScore();
+        getWorld().removeObject(this);
+        System.out.println(ScoreManager.getScore());
+    }
+    
+    
     private void executeAction(){
         if(this.nextAction.equals("DamagedState")){
             //

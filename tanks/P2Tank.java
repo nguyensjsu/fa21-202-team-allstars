@@ -39,4 +39,8 @@ public class P2Tank extends Tank
         if(Greenfoot.isKeyDown("S"))
             this.downKey.execute();
     }
+    
+    public void bulletCollision(){
+        
+    }
 }

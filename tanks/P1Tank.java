@@ -40,4 +40,8 @@ public class P1Tank extends Tank
         if(Greenfoot.isKeyDown("space"))
             this.shoot();
     }
+    
+    public void bulletCollision(){
+        
+    }
 }
