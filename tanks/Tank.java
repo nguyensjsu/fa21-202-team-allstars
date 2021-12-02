@@ -102,14 +102,6 @@ public abstract class Tank extends Actor
         return a;
     }
     
-    public void bulletCollision() {
-        reduceHealth();
-        if(getHealth() == 0){
-            strategy = health0;
-        }
-        strategy.display(this) ;
-    }
-=======
+
     public abstract void bulletCollision();
->>>>>>> Stashed changes
 }
