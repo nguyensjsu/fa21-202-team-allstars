@@ -10,8 +10,12 @@ public abstract class Tank extends Actor
 {
     private int health;
      static long bullet_interval = 200000000;
-    static final int bullet_offset = 25;
+    static final int bullet_offset = 40;
     long last_shot = -1;
+    
+    Health1Strategy health1 = new Health1Strategy(); 
+    IBulletCollisionStrategy health0 = new Health0Strategy(); 
+    IBulletCollisionStrategy strategy = health1; 
     public Tank()
     {
         health = 10;
@@ -100,5 +104,9 @@ public abstract class Tank extends Actor
     
     public void bulletCollision() {
         reduceHealth();
+        if(getHealth() == 0){
+            strategy = health0;
+        }
+        strategy.display(this) ;
     }
 }

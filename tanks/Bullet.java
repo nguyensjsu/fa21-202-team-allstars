@@ -27,16 +27,26 @@ public class Bullet extends Actor
                 removed = true;
             }
             
-            if(! removed) {
-                List<Tank> list2 =  getIntersectingObjects(Tank.class);
-                if( list.size() > 0){
-                    for(Tank o: list2)
-                        o.bulletCollision();
+            // if(! removed) {
+                // List<Tank> list2 =  getIntersectingObjects(Tank.class);
+                // if( list.size() > 0){
+                    // for(Tank o: list2)
+                        // o.bulletCollision();
+                    // getWorld().removeObject(this);
+                    // removed = true;
+                // }
+            // }
+            else{
+                List<Tank> tankList = getIntersectingObjects(Tank.class); 
+                System.out.println(tankList);
+                if (tankList.size()>0){
+                    for( Tank t: tankList)
+                        t.bulletCollision();
                     getWorld().removeObject(this);
-                    removed = true;
                 }
             }
         }
+
     }
     
 }

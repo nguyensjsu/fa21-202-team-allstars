@@ -6,5 +6,5 @@
  */
 public interface IBulletCollisionStrategy  
 {
-    void display();
+    void display(Tank t);
 }
