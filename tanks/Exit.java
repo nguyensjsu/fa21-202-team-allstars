@@ -20,8 +20,15 @@ public class Exit extends Actor
     {
         if (Greenfoot.mousePressed(this))
     {
+        resetGame();
         Greenfoot.setWorld(new MainMenu());
     }
         
+    }
+    
+    public void resetGame(){
+        LevelHandler levelHandler = LevelHandler.getInstance();
+        levelHandler.reset();
+        ScoreManager.reset();
     }
 }

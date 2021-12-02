@@ -107,9 +107,6 @@ public class LevelDecorator extends World implements ILevelInterface
         addObject(barrier, 700, 300);
     }
     
-    public void newEnemyTank() {
-        base.newEnemyTank();
-    }
     
     public boolean isPlayerOneALive(){
         return base.isPlayerOneALive();

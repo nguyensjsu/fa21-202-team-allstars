@@ -55,7 +55,9 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
     public void bulletCollision(){
         ScoreManager.addScore();
         getWorld().removeObject(this);
-        System.out.println(ScoreManager.getScore());
+        LevelHandler levelHandler = LevelHandler.getInstance();
+        levelHandler.newEnemyTank();
+        levelHandler.AITankDestroyed();
     }
     
     

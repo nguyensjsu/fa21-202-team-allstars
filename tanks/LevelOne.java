@@ -5,10 +5,6 @@ import greenfoot.*;
 public class LevelOne extends World implements ILevelInterface {
 
     private LevelHandler levelHandler;
-    static boolean[] tankCordinatesAvaliability = {true, true, true, true, true, true};
-    final static int totalLocations = 5;
-    static int[][] tankCordinates={{125,25},{675,275},{375,25},{25,475},{675,475},{275,425}};
-    static final int AI_TANK_LIMIT_ON_SCREEN = 3;
     private World nextLevel;
     World dec;
     public LevelOne(){
@@ -21,7 +17,7 @@ public class LevelOne extends World implements ILevelInterface {
     }
 
     public void createLevel(){
-        levelHandler = new LevelHandler();
+        levelHandler = LevelHandler.getInstance();
         createBricks();
         createP1Tank();
         createP2Tank();
@@ -44,25 +40,7 @@ public class LevelOne extends World implements ILevelInterface {
     }
     
     public void createEnemyTanks(){
-        for(int i=0; i<AI_TANK_LIMIT_ON_SCREEN;i++){
-            newEnemyTank();
-        }
-        Arrays.fill(tankCordinatesAvaliability,true);
-    }
-
-    public void newEnemyTank(){
-        if(levelHandler.isCreatingAIPossible()){
-            Random ran = new Random();
-            NPCTank aiTank = new NPCTank();
-            int locationIndex =ran.nextInt(totalLocations);
-            while(!tankCordinatesAvaliability[locationIndex]){
-                locationIndex = ran.nextInt(totalLocations);
-            }
-            int[] location = tankCordinates[locationIndex];
-            tankCordinatesAvaliability[locationIndex] = false;
-            dec.addObject(aiTank, location[0], location[1]);
-            levelHandler.AITankCreated();
-        }
+        levelHandler.createEnemyTanks();
     }
 
     public boolean isPlayerOneALive() {

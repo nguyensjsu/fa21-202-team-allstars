@@ -7,7 +7,6 @@ public interface ILevelInterface{
     public void createLevel();
     void setWorld(World dec);
      // As of now No Sheild
-    void newEnemyTank();
     boolean isPlayerOneALive();
     boolean isPlayerTwoALive();
 

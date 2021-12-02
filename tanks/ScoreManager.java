@@ -17,5 +17,9 @@ public class ScoreManager
         score += 5;
     }
     
+    public static void reset(){
+        score = 0;
+    }
+    
     
 }

@@ -38,7 +38,6 @@ public class Bullet extends Actor
             // }
             else{
                 List<Tank> tankList = getIntersectingObjects(Tank.class); 
-                System.out.println(tankList);
                 if (tankList.size()>0){
                     for( Tank t: tankList)
                         t.bulletCollision();
