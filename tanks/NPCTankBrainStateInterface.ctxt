@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=NPCTankBrainStateInterface
+comment1.params=
+comment1.target=void\ seeEnemy()
+comment2.params=
+comment2.target=void\ seeFriend()
+comment3.params=
+comment3.target=void\ seeNothing()
+comment4.params=
+comment4.target=void\ seeWall()
+comment5.params=
+comment5.target=void\ takeDamage()
+comment6.params=
+comment6.target=void\ zeroHealth()
+numComments=7

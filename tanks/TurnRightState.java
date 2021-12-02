@@ -1,6 +1,4 @@
 public class TurnRightState extends NullState{
-    //In this state, the tank will move about randomly, with a preference for continuing to turn left
-    //The tank will fire on enemies, move to follow friends, and has a small chance of shooting at walls
     public TurnRightState(){
         super();
     }
@@ -14,41 +12,29 @@ public class TurnRightState extends NullState{
         this.stateMachine.setToDriveForwardState();
     }
     public void seeNothing(){
-        int roll=rng.nextInt(12);
-        if(roll<2){
-            this.stateMachine.setToDriveBackwardState();
-        }
-        else if(roll<4){
+        int roll=rng.nextInt(100);
+        if(roll<33){
             this.stateMachine.setToDriveForwardState();
         }
-        else if(roll<6){
-            this.stateMachine.setToTurnLeftState();
-        }
-        else if(roll<11){
+        else if(roll<66){
             this.stateMachine.setToTurnRightState();
         }
-        else{
+        else if(roll<100){
             this.stateMachine.setToRestState();
         }
     }
     public void seeWall(){
-        int roll=rng.nextInt(17);
-        if(roll<3){
+        int roll=rng.nextInt(100);
+        if(roll<10){
             this.stateMachine.setToDriveBackwardState();
         }
-        else if(roll<6){
-            this.stateMachine.setToDriveForwardState();
-        }
-        else if(roll<9){
-            this.stateMachine.setToTurnLeftState();
-        }
-        else if(roll<14){
+        else if(roll<60){
             this.stateMachine.setToTurnRightState();
         }
-        else if(roll<16){
+        else if(roll<90){
             this.stateMachine.setToRestState();
         }
-        else{
+        else if(roll<100){
             this.stateMachine.setToShootState();
         }
     }

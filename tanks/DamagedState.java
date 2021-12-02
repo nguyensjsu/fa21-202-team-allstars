@@ -1,7 +1,4 @@
 public class DamagedState extends NullState{
-    //In this state, the tank is momentarily stunned from being struck
-    //In all events except zeroHealth the tank will go to RestState, causing a 1 timestep delay before the tank reevaluates its actions
-    //having takeDamage go to RestState instead of back into this state gives a grace period before taking further damage
     public DamagedState(){
         super();
     }

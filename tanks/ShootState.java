@@ -1,7 +1,4 @@
 public class ShootState extends NullState{
-    //In this state, the tank is momentarily stunned from the recoil of its shot
-    //In all events except takeDamage and zeroHealth the tank will go to RestState, causing a 1 timestep delay before the tank reevaluates its actions
-    //having seeEnemy go to RestState instead of back into this state gives a grace period for players under fire; the tank has to reload
     public ShootState(){
         super();
     }

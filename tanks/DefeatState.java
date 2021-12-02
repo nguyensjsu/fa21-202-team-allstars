@@ -1,5 +1,4 @@
 public class DefeatState extends NullState{
-    //This state has no behavior; the tank is defeated
     public DefeatState(){
         super();
     }

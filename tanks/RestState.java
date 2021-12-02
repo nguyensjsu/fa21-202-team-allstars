@@ -1,6 +1,4 @@
 public class RestState extends NullState{
-    //In this state, the tank will move about randomly, with a preference for staying in place
-    //The tank will fire on enemies and move to follow friends
     public RestState(){
         super();
     }
@@ -14,46 +12,40 @@ public class RestState extends NullState{
         this.stateMachine.setToDriveForwardState();
     }
     public void seeNothing(){
-        int roll=rng.nextInt(9);
-        if(roll<1){
+        int roll=rng.nextInt(100);
+        if(roll<20){
             this.stateMachine.setToDriveBackwardState();
         }
-        else if(roll<2){
+        else if(roll<40){
             this.stateMachine.setToDriveForwardState();
         }
-        else if(roll<3){
+        else if(roll<60){
             this.stateMachine.setToTurnLeftState();
         }
-        else if(roll<4){
+        else if(roll<80){
             this.stateMachine.setToTurnRightState();
         }
-        else{
+        else if(roll<100){
             this.stateMachine.setToRestState();
         }
     }
     public void seeWall(){
-        int roll=rng.nextInt(10);
-        if(roll<1){
+        int roll=rng.nextInt(100);
+        if(roll<20){
             this.stateMachine.setToDriveBackwardState();
         }
-        else if(roll<2){
-            this.stateMachine.setToDriveForwardState();
-        }
-        else if(roll<3){
+        else if(roll<40){
             this.stateMachine.setToTurnLeftState();
         }
-        else if(roll<4){
+        else if(roll<60){
             this.stateMachine.setToTurnRightState();
         }
-        else if(roll<10){
+        else if(roll<80){
             this.stateMachine.setToRestState();
         }
-        else{
+        else if(roll<100){
             this.stateMachine.setToShootState();
         }
-        //fill in later
-        //roll on DriveBackward/DriveForward/TurnLeft/TurnRight/Restx5
-        return;
     }
     public void takeDamage(){
         this.stateMachine.setToDamagedState();
