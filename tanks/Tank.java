@@ -18,7 +18,7 @@ public abstract class Tank extends Actor
     IBulletCollisionStrategy strategy = health1; 
     public Tank()
     {
-        health = 10;
+        health = 3;
     }
     
     public void shoot(){

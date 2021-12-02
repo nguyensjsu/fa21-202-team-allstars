@@ -12,7 +12,7 @@ public class Health0Strategy extends Actor implements IBulletCollisionStrategy
      * Display the tank destroyed (after all the lives are lost)
      */
     public void display(Tank t){
-         setImage("skull.png");
+        t.setImage("skull.png");
     }
     
 }

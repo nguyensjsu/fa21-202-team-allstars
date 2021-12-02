@@ -11,7 +11,7 @@ public class Health1Strategy extends Actor implements IBulletCollisionStrategy
      * Display the tank (not destroyed)
      */
     public void display(Tank t){
-        setImage("skull.png");
+        
     }
     
 }
