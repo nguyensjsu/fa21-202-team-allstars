@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Arrays;
 import greenfoot.*;
 
 public class LevelTwo extends World implements ILevelInterface{
@@ -7,7 +8,10 @@ public class LevelTwo extends World implements ILevelInterface{
 
     private World nextLevel;
 
-    static int[][] tankCordinates={{25,325},{425,575},{375,25},{675,225}};
+    static boolean[] tankCordinatesAvaliability = {true, true, true, true, true, true};
+    final static int totalLocations = 5;
+    static int[][] tankCordinates={{125,25},{675,275},{375,25},{25,475},{675,475},{275,425}};
+    static final int AI_TANK_LIMIT_ON_SCREEN = 3;
     World dec;
     public LevelTwo(){
         super(700,600,1);
@@ -20,17 +24,41 @@ public class LevelTwo extends World implements ILevelInterface{
     public void createLevel(){
         levelHandler = new LevelHandler();
         createBricks();
-        newEnemyTank();
+        createP1Tank();
+        createP2Tank();
+        createEnemyTanks();
     }
     
+    public void createP1Tank(){
+        P1Tank p1Tank = new P1Tank();
+        dec.addObject(p1Tank, 25, 325);
+    }
+    
+    public void createP2Tank(){
+        P2Tank p2Tank = new P2Tank();
+        dec.addObject(p2Tank, 425, 575);
+    }
+    
+   public void createEnemyTanks(){
+        for(int i=0; i<AI_TANK_LIMIT_ON_SCREEN;i++){
+            newEnemyTank();
+        }
+        Arrays.fill(tankCordinatesAvaliability,true);
+    }
+
     public void newEnemyTank(){
-        Random ran = new Random();
-        int x = ran.nextInt(tankCordinates.length);
-        P1Tank tank = new P1Tank();
-        // AbstractTank tank =new P1Tank();
-        int[] location = tankCordinates[x];
-        dec.addObject(tank, location[0], location[1]);
-        levelHandler.AITankCreated();
+        if(levelHandler.isCreatingAIPossible()){
+            Random ran = new Random();
+            NPCTank aiTank = new NPCTank();
+            int locationIndex =ran.nextInt(totalLocations);
+            while(!tankCordinatesAvaliability[locationIndex]){
+                locationIndex = ran.nextInt(totalLocations);
+            }
+            int[] location = tankCordinates[locationIndex];
+            tankCordinatesAvaliability[locationIndex] = false;
+            dec.addObject(aiTank, location[0], location[1]);
+            levelHandler.AITankCreated();
+        }
     }
 
     public void moveToNextLevel(){
