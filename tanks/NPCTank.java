@@ -7,6 +7,7 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
     private TankCommands leftKey;
     private TankCommands rightKey;
     private TankCommands downKey;
+    private static final int lineOfSightDistance=5;
     
     public NPCTank(){
         this.brain=new NPCTankBrain();
@@ -21,12 +22,14 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
     }
     
     public void act(){
+        if(this.health<=0){
+            this.brain.zeroHealth();
+        }
         this.senseEnviron();
         this.executeAction();
     }
     private void senseEnviron(){
-        int lineOfSightDistance=3;
-        processSight(lookAhead(lineOfSightDistance));
+        processSight(lookAhead(this.lineOfSightDistance));
     }
     private void processSight(Actor sight){
         if(sight==null){
@@ -54,10 +57,12 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
     
     public void bulletCollision(){
         ScoreManager.addScore();
-        getWorld().removeObject(this);
-        LevelHandler levelHandler = LevelHandler.getInstance();
-        levelHandler.newEnemyTank();
-        levelHandler.AITankDestroyed();
+        reduceHealth();
+    }
+    
+    public void reduceHealth(){
+        this.health--;
+        this.brain.takeDamage();
     }
     
     
