@@ -42,7 +42,7 @@ public class LevelHandler {
         List<NPCTank> npcs = world.getObjects(NPCTank.class);
         
         //checking endgame
-        if(p1Tank.isEmpty() || p2Tank.isEmpty() || npcs.isEmpty()) {
+        if((p1Tank.isEmpty() && p2Tank.isEmpty()) || npcs.isEmpty()) {
             int[][] stats = getCurrentTankStatus();
             int score = 0;
             score += stats[0][0] * 10 + stats[0][1] * 2;
@@ -57,7 +57,7 @@ public class LevelHandler {
         if(!p1Tank.isEmpty()) {
             P1Tank p1 = p1Tank.get(0);
             playerOneHealth = p1.getHealth();
-            if(playerOneHealth == 0) {
+            if(playerOneHealth <= 0) {
                 world.removeObject(p1);
                 if(playerOneLives > 0) {
                     newPlayerTank(new P1Tank());
@@ -69,7 +69,7 @@ public class LevelHandler {
         if(!p2Tank.isEmpty()) {
             P2Tank p2 = p2Tank.get(0);
             playerTwoHealth = p2.getHealth();
-            if(playerTwoHealth == 0) {
+            if(playerTwoHealth <= 0) {
                 world.removeObject(p2);
                 if(playerTwoLives > 0) {
                     newPlayerTank(new P2Tank());
