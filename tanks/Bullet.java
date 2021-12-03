@@ -26,16 +26,6 @@ public class Bullet extends Actor
                 getWorld().removeObject(this);
                 removed = true;
             }
-            
-            // if(! removed) {
-                // List<Tank> list2 =  getIntersectingObjects(Tank.class);
-                // if( list.size() > 0){
-                    // for(Tank o: list2)
-                        // o.bulletCollision();
-                    // getWorld().removeObject(this);
-                    // removed = true;
-                // }
-            // }
             else{
                 List<Tank> tankList = getIntersectingObjects(Tank.class); 
                 if (tankList.size()>0){
