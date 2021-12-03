@@ -48,7 +48,7 @@ public class LevelHandler {
             score += stats[0][0] * 10 + stats[0][1] * 2;
             score += stats[1][0] * 10 + stats[1][1] * 2;
             score += (AITanksCreated - currentAITankCount) * 5; // 5points per tank
-            System.out.println("Score: " + score);
+            //System.out.println("Score: " + score);
             EndGame end = new EndGame();
             Greenfoot.setWorld(end);
         }
