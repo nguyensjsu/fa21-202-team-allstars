@@ -13,11 +13,12 @@ public abstract class Tank extends Actor
     static final int bullet_offset = 40;
     long last_shot = -1;
     
-    Health1Strategy health1 = new Health1Strategy(); 
-    IBulletCollisionStrategy health0 = new Health0Strategy(); 
-    IBulletCollisionStrategy strategy = health1; 
+    IBulletCollisionStrategy strategy;
+    Health1Strategy health1Strategy = new Health1Strategy(); 
+    IBulletCollisionStrategy health0Strategy = new Health0Strategy(); 
     public Tank()
     {
+        strategy = health1Strategy;
         health = 3;
     }
     
@@ -107,7 +108,7 @@ public abstract class Tank extends Actor
         reduceHealth();
         
         if(getHealth() == 0){
-            strategy = health0;
+            strategy = health0Strategy;
         }
         strategy.display(this);
     }

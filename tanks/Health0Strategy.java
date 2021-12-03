@@ -2,8 +2,8 @@ import greenfoot.*;
 /**
  * Write a description of class Health0Strategy here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Shafeeq
+ * @version 1.0
  */
 public class Health0Strategy extends Actor implements IBulletCollisionStrategy 
 {
@@ -15,4 +15,7 @@ public class Health0Strategy extends Actor implements IBulletCollisionStrategy
         t.setImage("skull.png");
     }
     
+    public String getCurrentStrategy(){
+        return this.getClass().getSimpleName() ;
+    }
 }
