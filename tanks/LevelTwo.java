@@ -15,7 +15,7 @@ public class LevelTwo extends World implements ILevelInterface{
     }
     
     public void act() {
-        
+        levelHandler.run();
     }
     
     public void setWorld(World dec){
