@@ -29,6 +29,7 @@ public class LevelDecorator extends World implements ILevelInterface
     }
     
     public void act() {
+        base.act();
         updateInfo();
     }
     
@@ -83,17 +84,17 @@ public class LevelDecorator extends World implements ILevelInterface
         addObject(AIPlaceHolderLives, 800, 400);
         addObject(AIPlaceHolderHealth, 850, 400);
     }
-    
+
     public void updateInfo() {
         int[][] stats = getCurrentTankStatus();
-        
-        P1PlaceHolderLives.updateImage(Integer.toString(stats[0][1]));
-        P2PlaceHolderLives.updateImage(Integer.toString(stats[0][1]));
-        AIPlaceHolderLives.updateImage(Integer.toString(stats[0][1]));
+
+        P1PlaceHolderLives.updateImage(Integer.toString(stats[0][0]));
+        P2PlaceHolderLives.updateImage(Integer.toString(stats[1][0]));
+        AIPlaceHolderLives.updateImage(Integer.toString(stats[2][0]));
         
         P1PlaceHolderHealth.updateImage(Integer.toString(stats[0][1]));
-        P2PlaceHolderHealth.updateImage(Integer.toString(stats[0][1]));
-        AIPlaceHolderHealth.updateImage(Integer.toString(stats[0][1]));
+        P2PlaceHolderHealth.updateImage(Integer.toString(stats[1][1]));
+        AIPlaceHolderHealth.updateImage(Integer.toString(stats[2][1]));
     }
     
     private void setBackground() {
@@ -138,5 +139,9 @@ public class LevelDecorator extends World implements ILevelInterface
     
     public int[][] getCurrentTankStatus() {
         return base.getCurrentTankStatus();
+    }
+    
+    public World returnWorld() {
+        return this;
     }
 }

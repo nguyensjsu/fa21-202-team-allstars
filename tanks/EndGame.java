@@ -26,6 +26,7 @@ public class EndGame extends World
         score += calculateScore(player2);
         score += ScoreManager.getScore();
         showText("Score:  "+score, 325,125);
+        levelHandler.reset();
         Exit exit = new Exit();
         addObject(exit, 350, 225);
     }

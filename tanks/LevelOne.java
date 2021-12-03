@@ -12,6 +12,10 @@ public class LevelOne extends World implements ILevelInterface {
         dec = this;
     }
     
+    public void act() {
+        levelHandler.run();
+    }
+    
     public void setWorld(World dec){
         this.dec = dec;
     }

@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.Random;
 import greenfoot.*;
+import java.util.List;
+
 public class LevelHandler {
 
     static boolean[] tankCordinatesAvaliability = {true, true, true, true, true, true};
@@ -11,7 +13,7 @@ public class LevelHandler {
     static final int AI_TANK_TOTAL = 10;
     
     static final int PLAYER_DEAFULT_LIVES = 3;
-    static final int PLAYER_DEAFULT_HEALTH = 100;
+    static final int PLAYER_DEAFULT_HEALTH = 3;
 
     private int playerOneLives;
     private int playerTwoLives;
@@ -31,6 +33,63 @@ public class LevelHandler {
     public static LevelHandler getNewInstance(){
         levelHandler =  new LevelHandler();
         return levelHandler;
+    }
+    
+    public void run() {
+        World world = decorator.returnWorld();
+        List<P1Tank> p1Tank = world.getObjects(P1Tank.class);
+        List<P2Tank> p2Tank = world.getObjects(P2Tank.class);
+        List<NPCTank> npcs = world.getObjects(NPCTank.class);
+        
+        //checking endgame
+        if(p1Tank.isEmpty() || p2Tank.isEmpty() || npcs.isEmpty()) {
+            int[][] stats = getCurrentTankStatus();
+            int score = 0;
+            score += stats[0][0] * 10 + stats[0][1] * 2;
+            score += stats[1][0] * 10 + stats[1][1] * 2;
+            score += (AITanksCreated - currentAITankCount) * 5; // 5points per tank
+            System.out.println("Score: " + score);
+            EndGame end = new EndGame();
+            Greenfoot.setWorld(end);
+        }
+        
+        
+        if(!p1Tank.isEmpty()) {
+            P1Tank p1 = p1Tank.get(0);
+            playerOneHealth = p1.getHealth();
+            if(playerOneHealth == 0) {
+                world.removeObject(p1);
+                if(playerOneLives > 0) {
+                    newPlayerTank(new P1Tank());
+                    playerOneLives--;
+                }
+            }
+        }
+        
+        if(!p2Tank.isEmpty()) {
+            P2Tank p2 = p2Tank.get(0);
+            playerTwoHealth = p2.getHealth();
+            if(playerTwoHealth == 0) {
+                world.removeObject(p2);
+                if(playerTwoLives > 0) {
+                    newPlayerTank(new P2Tank());
+                    playerTwoLives--;
+                }
+            }
+        }
+        
+        for(NPCTank npc: npcs){
+            if(npc.getHealth() == 0) {
+                world.removeObject(npc);
+                currentAITankCount--;
+            }
+        }
+        
+        int aiTanksToAdd = AI_TANK_TOTAL - AITanksCreated;
+        aiTanksToAdd = (aiTanksToAdd > AI_TANK_LIMIT_ON_SCREEN) ? AI_TANK_LIMIT_ON_SCREEN : aiTanksToAdd;
+        for(int i=0; i<aiTanksToAdd; i++){
+            newEnemyTank();
+        }
     }
     
     public void setDecorator(LevelDecorator decorator){
@@ -56,6 +115,18 @@ public class LevelHandler {
         for(int i=0; i<AI_TANK_LIMIT_ON_SCREEN;i++){
             newEnemyTank();
         }
+    }
+    
+    public void newPlayerTank(Tank tank) {
+        Random ran = new Random();
+        int locationIndex = ran.nextInt(totalLocations);
+        while(!tankCordinatesAvaliability[locationIndex]){
+            locationIndex = ran.nextInt(totalLocations);
+        }
+        int[] location = tankCordinates[locationIndex];
+        tankCordinatesAvaliability[locationIndex] = false;
+        decorator.addObject(tank, location[0], location[1]);
+        tankCordinatesAvaliability[locationIndex] = true;
     }
 
     public void newEnemyTank(){
@@ -142,14 +213,9 @@ public class LevelHandler {
     
     public void AITankDestroyed(){
         this.currentAITankCount--;
-        if(this.currentAITankCount==0){
-            EndGame endGame = new EndGame();
-            Greenfoot.setWorld(endGame);
-        }
     }
     
     public void reset(){
         levelHandler = null;
     }
-    
 }

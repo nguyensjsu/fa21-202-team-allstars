@@ -55,11 +55,6 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
         }
     }
     
-    public void bulletCollision(){
-        ScoreManager.addScore();
-        reduceHealth();
-    }
-    
     public void reduceHealth(){
         this.health--;
         this.brain.takeDamage();

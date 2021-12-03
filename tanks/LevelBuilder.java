@@ -24,7 +24,7 @@ public class LevelBuilder
     public void buildLevel(){
         LevelDecorator levelDecorator = new LevelDecorator(level);
         level.setWorld(levelDecorator);
-        LevelHandler levelHandler = LevelHandler.getInstance();
+        LevelHandler levelHandler = LevelHandler.getNewInstance();
         levelHandler.setDecorator(levelDecorator);
         Greenfoot.setWorld(levelDecorator);
         levelDecorator.createLevel();
