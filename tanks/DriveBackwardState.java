@@ -16,14 +16,11 @@ public class DriveBackwardState extends NullState{
         if(roll<70){
             this.stateMachine.setToDriveBackwardState();
         }
-        else if(roll<80){
+        else if(roll<85){
             this.stateMachine.setToTurnLeftState();
         }
-        else if(roll<90){
-            this.stateMachine.setToTurnRightState();
-        }
         else if(roll<100){
-            this.stateMachine.setToRestState();
+            this.stateMachine.setToTurnRightState();
         }
     }
     public void seeWall(){
@@ -36,9 +33,6 @@ public class DriveBackwardState extends NullState{
         }
         else if(roll<90){
             this.stateMachine.setToTurnRightState();
-        }
-        else if(roll<95){
-            this.stateMachine.setToRestState();
         }
         else if(roll<100){
             this.stateMachine.setToShootState();

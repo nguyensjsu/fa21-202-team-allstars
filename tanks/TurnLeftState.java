@@ -13,26 +13,20 @@ public class TurnLeftState extends NullState{
     }
     public void seeNothing(){
         int roll=rng.nextInt(100);
-        if(roll<33){
+        if(roll<50){
             this.stateMachine.setToDriveForwardState();
         }
-        else if(roll<66){
-            this.stateMachine.setToTurnLeftState();
-        }
         else if(roll<100){
-            this.stateMachine.setToRestState();
+            this.stateMachine.setToTurnLeftState();
         }
     }
     public void seeWall(){
         int roll=rng.nextInt(100);
-        if(roll<10){
+        if(roll<25){
             this.stateMachine.setToDriveBackwardState();
         }
-        else if(roll<60){
+        else if(roll<75){
             this.stateMachine.setToTurnLeftState();
-        }
-        else if(roll<90){
-            this.stateMachine.setToRestState();
         }
         else if(roll<100){
             this.stateMachine.setToShootState();

@@ -22,25 +22,22 @@ public class DriveForwardState extends NullState{
     }
     public void seeNothing(){
         int roll=rng.nextInt(100);
-        if(roll<70){
+        if(roll<80){
             this.stateMachine.setToDriveForwardState();
         }
-        else if(roll<80){
+        else if(roll<90){
             this.stateMachine.setToTurnLeftState();
         }
-        else if(roll<90){
-            this.stateMachine.setToTurnRightState();
-        }
         else if(roll<100){
-            this.stateMachine.setToRestState();
+            this.stateMachine.setToTurnRightState();
         }
     }
     public void seeWall(){
         int roll=rng.nextInt(100);
-        if(roll<25){
+        if(roll<33){
             this.stateMachine.setToTurnLeftState();
         }
-        else if(roll<50){
+        else if(roll<66){
             this.stateMachine.setToTurnRightState();
         }
         else if(roll<75){
