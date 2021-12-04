@@ -3,19 +3,12 @@ import greenfoot.*;
 public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
     private NPCTankBrainInterface brain;
     private String nextAction;
-    private TankCommands upKey;
-    private TankCommands leftKey;
-    private TankCommands rightKey;
-    private TankCommands downKey;
     private static final int lineOfSightDistance=5;
     
     public NPCTank(){
+        super();
         this.brain=new NPCTankBrain();
         this.brain.attachObserver(this);
-        upKey = new UpKey(this);
-        leftKey = new LeftKey(this);
-        rightKey = new RightKey(this);
-        downKey = new DownKey(this);
         GreenfootImage image = getImage();
         image.scale(image.getWidth() - 45, image.getHeight() - 15);
         setImage(image);

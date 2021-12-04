@@ -8,20 +8,12 @@ import greenfoot.*;
  */
 public class P1Tank extends Tank
 {
-    private TankCommands upKey;
-    private TankCommands leftKey;
-    private TankCommands rightKey;
-    private TankCommands downKey;
-
     /**
      * Act - do whatever the P1Tank wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public P1Tank(){
-        upKey = new UpKey(this);
-        leftKey = new LeftKey(this);
-        rightKey = new RightKey(this);
-        downKey = new DownKey(this);
+        super();
         GreenfootImage image = getImage();
         image.scale(image.getWidth() - 45, image.getHeight() - 15);
         setImage(image);

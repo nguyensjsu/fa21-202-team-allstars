@@ -16,8 +16,17 @@ public abstract class Tank extends Actor
     IBulletCollisionStrategy strategy;
     IBulletCollisionStrategy health1Strategy = new Health1Strategy(); 
     IBulletCollisionStrategy health0Strategy = new Health0Strategy(); 
+    
+    protected TankCommands upKey;
+    protected TankCommands leftKey;
+    protected TankCommands rightKey;
+    protected TankCommands downKey;
     public Tank()
     {
+        upKey = new UpKey(this);
+        leftKey = new LeftKey(this);
+        rightKey = new RightKey(this);
+        downKey = new DownKey(this);
         setStrategy(health1Strategy) ;
         health = 3;
     }
