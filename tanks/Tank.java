@@ -18,7 +18,7 @@ public abstract class Tank extends Actor
     IBulletCollisionStrategy health0Strategy = new Health0Strategy(); 
     public Tank()
     {
-        strategy = health1Strategy;
+        setStrategy(health1Strategy) ;
         health = 3;
     }
     
@@ -103,12 +103,17 @@ public abstract class Tank extends Actor
         return a;
     }
     
-
+    // Setting strategy
+    public void setStrategy(IBulletCollisionStrategy s){
+        this.strategy = s ;
+    }
+    
+    // Reduce health of the tank and display the tank after the hit of bullet
     public void bulletCollision(){
         reduceHealth();
         
         if(getHealth() == 0){
-            strategy = health0Strategy;
+            setStrategy(health0Strategy) ;
         }
         strategy.display(this);
     }
