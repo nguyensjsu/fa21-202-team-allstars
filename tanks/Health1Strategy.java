@@ -7,6 +7,9 @@ import greenfoot.*;
  */
 public class Health1Strategy extends Actor implements IBulletCollisionStrategy
 {   
+    // Constructor 
+    public Health1Strategy(){ }
+    
     /** 
      * Display the tank (not destroyed)
      */
@@ -17,6 +20,9 @@ public class Health1Strategy extends Actor implements IBulletCollisionStrategy
         t.setImage(image) ;
     }
     
+    /**
+     * Get the current strategy the name
+     */
     public String getCurrentStrategy(){
         return this.getClass().getSimpleName() ;
     }
