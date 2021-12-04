@@ -112,6 +112,10 @@ Singleton Pattern (for Score Management) done by Yash Trivedi
 
 ![Twin Tanks Class Diagram](https://user-images.githubusercontent.com/89321789/144721842-fc4b4416-0c23-4784-b412-16f7c8253426.png)
 
+Command Pattern (for Tank movements, shoot, health features) by Guru Karthik
+
+![CommandPattern](https://user-images.githubusercontent.com/89321642/144723466-504f6e0f-ab52-493b-8e0f-fd213f6356d2.png)
+
 
 
 ## Game Features
