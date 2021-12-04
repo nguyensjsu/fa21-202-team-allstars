@@ -28,7 +28,7 @@ public class TutorialPage extends World
 
     //This method return a getImage with specific font
     public GreenfootImage getImage(){
-        GreenfootImage image = new GreenfootImage(300, 300);
+        GreenfootImage image = new GreenfootImage(400, 400);
         image.setFont(new Font("Verdana", 20));
         return image;
     }
@@ -42,25 +42,25 @@ public class TutorialPage extends World
         playerOneHeadingImage.drawString("Player One Controls", 20, 20);
         playerOneHeading = new PlaceHolders();
         playerOneHeading.setImage(playerOneHeadingImage);
-        addObject(playerOneHeading, 135,175);
+        addObject(playerOneHeading, 200,200);
         
         GreenfootImage playerOneControlsImage = getImage();        
         playerOneControlsImage.drawString(getPlayerOneControls(), 20, 20);
         playerOneControls = new PlaceHolders();
         playerOneControls.setImage(playerOneControlsImage);
-        addObject(playerOneControls, 185,200);
+        addObject(playerOneControls, 225,225);
         
         GreenfootImage playerTwoHeadingImage = getImage();        
         playerTwoHeadingImage.drawString("Player Two Controls", 20, 20);
         playerTwoHeading = new PlaceHolders();
         playerTwoHeading.setImage(playerTwoHeadingImage);
-        addObject(playerTwoHeading, 135,375);
+        addObject(playerTwoHeading, 200,400);
         
         GreenfootImage playerTwoControlsImage = getImage();        
         playerTwoControlsImage.drawString(getPlayerTwoControls(), 20, 20);
         playerTwoControls = new PlaceHolders();
         playerTwoControls.setImage(playerTwoControlsImage);
-        addObject(playerTwoControls, 185,400);
+        addObject(playerTwoControls, 225,425);
         
         BackButton back = new BackButton();
         addObject(back, 600, 550);
