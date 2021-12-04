@@ -8,15 +8,22 @@ import greenfoot.*;
  */
 public class UpKey implements TankCommands
 {
-    /**
-     * Constructor for objects of class UpKey
-     */
     private Tank tank;
+    /**
+     * This method is a constructor for UpKey class.
+     * @param Tank This method takes the instance of Tank object for which the up key is pressed
+     * @return None
+     */
     public UpKey(Tank tank)
     {
         this.tank = tank;
     }
 
+    /**
+     * This method moves the tank in forward direction upon checking the presense of obstacle.
+     * @param None
+     * @return None
+     */
     public void execute()
     {
         int actorX = this.tank.getX();

@@ -9,7 +9,9 @@ import greenfoot.*;
 public class DownKey implements TankCommands
 {
     /**
-     * Constructor for objects of class DownKey
+     * This method is a constructor for DownKey class.
+     * @param Tank This method takes the instance of Tank object for which the down key is pressed
+     * @return None
      */
     private Tank tank;
     public DownKey(Tank tank)
@@ -17,6 +19,11 @@ public class DownKey implements TankCommands
         this.tank = tank;
     }
 
+    /**
+     * This method moves the tank in reverse direction upon checking the presense of obstacle.
+     * @param None
+     * @return None
+     */
     public void execute()
     {
         int actorX = this.tank.getX();

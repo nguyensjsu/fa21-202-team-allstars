@@ -8,10 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class P2Tank extends Tank
 {
-    /**
-     * Act - do whatever the P1Tank wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public P2Tank(){
         super();
         GreenfootImage image = getImage();
@@ -19,6 +15,10 @@ public class P2Tank extends Tank
         setImage(image);
     }
     
+    /**
+     * Act - do whatever the P1Tank wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         if(this.health>0){

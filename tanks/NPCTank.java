@@ -14,6 +14,10 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
         setImage(image);
     }
     
+    /**
+     * Act - do whatever the P1Tank wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act(){
         if(this.health<=0){
             this.brain.zeroHealth();
