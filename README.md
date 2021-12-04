@@ -45,7 +45,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 | :---                  | :---          |
 | Suresh Mula           | Communication |
 | Yash Trivedi          | Respect       |
-| (name)                | (value)       |
+| Sachin Pothukuchi     | Simplicity    |
 | Mohamed Shafeeq       | Feedback      |
 | (name)                | (value)       |
 | (name)                | (value)       |

@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Tutorial extends Actor
 {
+    static final int font_size = 30;
     public Tutorial(){
-        GreenfootImage image = getImage();
-        image.scale(175, 175);
+        GreenfootImage image = new GreenfootImage("Tutorial", font_size, null, null);
+        
+        this.setImage(image);
     }
     
     /**

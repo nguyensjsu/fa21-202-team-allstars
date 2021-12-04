@@ -61,7 +61,10 @@ public class TutorialPage extends World
         playerTwoControls = new PlaceHolders();
         playerTwoControls.setImage(playerTwoControlsImage);
         addObject(playerTwoControls, 185,400);
-    
+        
+        BackButton back = new BackButton();
+        addObject(back, 600, 550);
+        
         
     }
 
