@@ -107,6 +107,9 @@ Strategy Pattern (for Bullet Collision) done by Mohamed Shafeeq
 
 ![StrategyPattern_ClassDiagram](https://user-images.githubusercontent.com/89361239/144702744-8726ab1f-6003-4812-8e1c-c8edee8adcc6.png)
 
+Singleton Pattern (for Score Management) done by Yash Trivedi
+
+![Twin Tanks Class Diagram](https://user-images.githubusercontent.com/89321789/144721842-fc4b4416-0c23-4784-b412-16f7c8253426.png)
 
 
 
