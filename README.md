@@ -8,7 +8,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 
 -- add link to user story
 
--- add link to demo
+[Demo Video](https://youtu.be/0U_06Ww5UJA)
 
 -- extra credit recording of a scrum meeting?
 
@@ -104,3 +104,9 @@ Singleton pattern (for handling level) by Suresh Mula
 ![LevelHandlerSingletonClassDiagram](https://user-images.githubusercontent.com/89316778/144699945-7925aaa8-6b72-45a2-9780-6f12800abf7c.png)
 
 
+
+## Game Features
+
+1. 2 Levels in the gane
+2. 2 Player Game to enjoy with your friend
+3. Keeps Track of the Highscore to see if you are improving or not
