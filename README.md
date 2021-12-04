@@ -118,3 +118,17 @@ Singleton Pattern (for Score Management) done by Yash Trivedi
 1. 2 Levels in the game.
 2. 2 Player Game to enjoy with your friend
 3. Keeps Track of the Highscore to see if you are improving or not
+
+
+
+
+## Project Backlog and Burndown Chart
+
+Backlog
+
+![Backlog](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/Sprint%20log.png?raw=true)
+
+
+Burndown Chart
+
+![Burndown](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/Burndown%20Chart.png?raw=true)
