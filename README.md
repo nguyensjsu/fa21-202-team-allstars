@@ -99,3 +99,8 @@ StateMachine (for NPC Tank) done by Ganesh
 
 ![StateMachine 2](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/ClassDiagramTankBrain.png?raw=true)
 
+Singleton pattern (for handling level) by Suresh Mula
+
+![LevelHandlerSingletonClassDiagram](https://user-images.githubusercontent.com/89316778/144699945-7925aaa8-6b72-45a2-9780-6f12800abf7c.png)
+
+
