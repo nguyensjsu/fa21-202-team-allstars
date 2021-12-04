@@ -106,6 +106,15 @@ Singleton pattern (for handling level) by Suresh Mula
 
 Strategy Pattern (for Bullet Collision) done by Mohamed Shafeeq
 
+Design Notes:
+- Two stragies are set for Bullet collision feature for all the tanks. 
+  - Health1Stratgey: After a tank is collided with a bullet, it will get damaged. Therefore, damaged tank is displayed if the health reduces after bullet collision.
+  - Health2Strategy: After the health is completely exhausted per life ( i.e. if health becomes zero), the skeleton image is displayed to show that the tank is dead. 
+- "IBulletCollisionStrategy" acts as the interface for the strategies. 
+- "Heath0Strategy" and "Health1Strategy" are the concrete strategies. 
+- Tank class instantiates the "IBulletCollisionStrategy" interface object, using this object the specific strategies are set at respective times.  
+- Initially for each tank "Health1Strategy" is assigned.  
+
 ![StrategyPattern_ClassDiagram](https://user-images.githubusercontent.com/89361239/144702744-8726ab1f-6003-4812-8e1c-c8edee8adcc6.png)
 
 Singleton Pattern (for Score Management) done by Yash Trivedi
