@@ -14,7 +14,7 @@ public abstract class Tank extends Actor
     long last_shot = -1;
     
     IBulletCollisionStrategy strategy;
-    Health1Strategy health1Strategy = new Health1Strategy(); 
+    IBulletCollisionStrategy health1Strategy = new Health1Strategy(); 
     IBulletCollisionStrategy health0Strategy = new Health0Strategy(); 
     public Tank()
     {
