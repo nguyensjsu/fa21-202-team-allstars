@@ -17,18 +17,14 @@ public class EndGame extends World
     }
     
     public void showScore(){
-        LevelHandler levelHandler = LevelHandler.getInstance();
-        
-        int[][] stats = levelHandler.getCurrentTankStatus();
-        int score = 0;
-        score += stats[0][0] * 10 + stats[0][1] * 2;
-        score += stats[1][0] * 10 + stats[1][1] * 2;
-        score += (levelHandler.getAITanksCreated() - levelHandler.getCurrentAITankCount()) * 5; // 5points per tank
-        
+        ScoreManager scoreManager = ScoreManager.getInstance();
+        int score = scoreManager.getScore(); 
         showText("Score:  "+score, 325,125);
+        showText("Best Score : "+scoreManager.getBestScore(score), 325, 175);
+        LevelHandler levelHandler = LevelHandler.getInstance();
         levelHandler.reset();
         Exit exit = new Exit();
-        addObject(exit, 350, 225);
+        addObject(exit, 350, 325);
     }
     public int calculateScore(int[] player){
         int x = player[0]*10;

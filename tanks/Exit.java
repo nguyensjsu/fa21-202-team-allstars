@@ -29,6 +29,7 @@ public class Exit extends Actor
     private void resetGame(){
         LevelHandler levelHandler = LevelHandler.getInstance();
         levelHandler.reset();
-        ScoreManager.reset();
+        ScoreManager scoreManager =  ScoreManager.getInstance();
+        scoreManager.reset();
     }
 }

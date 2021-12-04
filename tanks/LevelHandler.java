@@ -81,6 +81,8 @@ public class LevelHandler {
         for(NPCTank npc: npcs){
             if(npc.getHealth() == 0) {
                 world.removeObject(npc);
+                ScoreManager scoreManager = ScoreManager.getInstance();
+                scoreManager.addScore();
                 currentAITankCount--;
             }
         }
