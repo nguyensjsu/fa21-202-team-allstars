@@ -3,7 +3,7 @@ Tasks worked on: Deciding a design pattern for implementing bullet collison with
 
 Blockers: None
 
-Feedback: Gathered feedback to keep the initial phase of the project to be simple and understandable. And suggested to keep the important tasks at priority first and to finish the remaining towards the end. Gave feedback for using Observer pattern for Tank Life detection, which is currently used in the project. And gathered feedback on having level2 in the game. 
+Feedback: Gathered feedback to keep the initial phase of the project to be simple and understandable. And suggested to keep the important tasks at priority first and to finish the remaining towards the end. Gave feedback for using Observer pattern for Tank Life detection. And gathered feedback on having level2 in the game. 
 
 # Week 2
 Tasks worked on: Deciding how many strategies to set for bullet collision. Finalised on two strategies, "Health1Strategy" (after taking damages from the bullet), "Health0Strategy" (after health becomes zero). Created a skeleton for both the strategy classes. 
