@@ -1,3 +1,5 @@
+//One state of the NPCTank state machine
+//This state has no behaviour, the NPCTank is defeated
 public class DefeatState extends NullState{
     public DefeatState(){
         super();

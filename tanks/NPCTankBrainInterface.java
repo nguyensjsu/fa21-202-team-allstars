@@ -1,4 +1,6 @@
-public interface NPCTankBrainInterface extends NPCTankBrainStateInterface{
+//Classes that implement this interface make the core of the NPCTank state machine as well
+//They have to track observers and state, as well as account for the events from NPCTankBrainStateInterface
+public interface NPCTankBrainInterface extends NPCTankBrainStateInterface{    
     //handling observers
     public void attachObserver(NPCTankBrainObserverInterface observer);
     public void notifyObservers();

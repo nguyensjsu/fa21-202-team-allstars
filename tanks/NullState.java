@@ -1,4 +1,5 @@
 import java.util.Random;
+//Defines a generic state for the NPCTank statemachine; all states should extend this class
 public abstract class NullState implements NPCTankBrainStateInterface{
     protected NPCTankBrainInterface stateMachine;
     protected Random rng;

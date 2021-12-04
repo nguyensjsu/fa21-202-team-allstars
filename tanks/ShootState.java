@@ -1,3 +1,6 @@
+//One state of the NPCTank state machine
+//The behaviour of this state is to always go to RestState unless damaged or defeated
+//Th NPCTank will reevaluate its position after shooting
 public class ShootState extends NullState{
     public ShootState(){
         super();

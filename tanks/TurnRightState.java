@@ -1,3 +1,7 @@
+//One state of the NPCTank state machine
+//The behaviour of this state is to continue turning right until randomly going forward
+//The NPCTank may back away from or shoot at walls
+//The NPCTank will shoot at enemies and follow friends
 public class TurnRightState extends NullState{
     public TurnRightState(){
         super();

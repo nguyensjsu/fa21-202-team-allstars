@@ -1,3 +1,7 @@
+//One state of the NPCTank state machine
+//The behaviour of this state is to always go to RestState
+//unless already defeated
+//The idea is to create a momentary pause as the NPCTank reevaluates after being struck
 public class DamagedState extends NullState{
     public DamagedState(){
         super();

@@ -1,3 +1,7 @@
+//One state of the NPCTank state machine
+//The behaviour of this state is to continue driving forward until randomly turning
+//The NPCTank will avoid walls and may shoot at them
+//The NPCTank will shoot at enemies
 public class DriveForwardState extends NullState{
     public DriveForwardState(){
         super();
@@ -39,9 +43,6 @@ public class DriveForwardState extends NullState{
         }
         else if(roll<66){
             this.stateMachine.setToTurnRightState();
-        }
-        else if(roll<75){
-            this.stateMachine.setToRestState();
         }
         else if(roll<100){
             this.stateMachine.setToShootState();

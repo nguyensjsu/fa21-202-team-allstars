@@ -1,4 +1,8 @@
 import java.util.ArrayList;
+//The implementation of NPCTankBrainInterface
+//This class is the core of the NPCTank state machine
+//As the NPCTankBrain receives event inputs, it will change its state and update any observers
+//Those observers can read the NPCTankBrain's state and act as they please
 public class NPCTankBrain implements NPCTankBrainInterface{
     private DamagedState damaged;
     private DefeatState defeat;
@@ -10,7 +14,6 @@ public class NPCTankBrain implements NPCTankBrainInterface{
     private TurnRightState turnRight;
     private NPCTankBrainStateInterface currentState;
     private ArrayList<NPCTankBrainObserverInterface> observers;
-    
     public NPCTankBrain(){
         this.damaged=new DamagedState(this);        
         this.defeat=new DefeatState(this);        

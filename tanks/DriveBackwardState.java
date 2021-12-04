@@ -1,3 +1,6 @@
+//One state of the NPCTank state machine
+//The behaviour of this state is to continue to drive backward until randomly turning
+//The NPCTank may shoot at walls and will shoot at enemies or follow friends
 public class DriveBackwardState extends NullState{
     public DriveBackwardState(){
         super();

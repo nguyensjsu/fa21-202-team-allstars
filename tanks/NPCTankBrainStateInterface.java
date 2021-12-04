@@ -1,5 +1,5 @@
+//The state machine that uses this interface must react in some way to these events
 public interface NPCTankBrainStateInterface{
-    //tentative list of events subject to change
     public void seeEnemy();
     public void seeFriend();
     public void seeNothing();

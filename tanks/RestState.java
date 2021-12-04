@@ -1,3 +1,8 @@
+//One state of the NPCTank state machine
+//This is the state the NPCTank defaults to on creation
+//The behaviour of this state is to randomly pick to go forward, backward, or turn
+//The NPCTank will avoid  or walls and may shoot at them
+//The NPCTank will shoot at enemies and follow friends
 public class RestState extends NullState{
     public RestState(){
         super();
