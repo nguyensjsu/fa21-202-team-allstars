@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=NullState
-comment1.params=
-comment1.target=NullState()
-comment2.params=stateMachine
-comment2.target=NullState(NPCTankBrainInterface)
-comment3.params=stateMachine
-comment3.target=void\ setStateMachine(NPCTankBrainInterface)
-numComments=4
