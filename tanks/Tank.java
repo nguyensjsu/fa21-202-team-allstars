@@ -9,7 +9,7 @@ import greenfoot.Actor;
 public abstract class Tank extends Actor
 {
     int health;
-     static long bullet_interval = 200000000;
+    static long bullet_interval = 200000000;
     static final int bullet_offset = 40;
     long last_shot = -1;
     
@@ -57,18 +57,7 @@ public abstract class Tank extends Actor
             last_shot = System.nanoTime();
         }
     }
-    public void turnLeft(){
-        
-    }
-    public void turnRight(){
-        
-    }
-    public void moveStraight(){
-        
-    }
-    public void moveDown(){
-        
-    }
+    
     public void reduceHealth(){
         health--;
     }
