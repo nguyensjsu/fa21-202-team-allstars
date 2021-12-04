@@ -48,7 +48,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 | Sachin Pothukuchi     | Simplicity    |
 | Mohamed Shafeeq       | Feedback      |
 | Ganesh S Tulshibagwale| Simplicity    |
-| (name)                | (value)       |
+| Guru Karthik          | Courage       |
 
 ## Summary of our Project
 Our game works by clicking on either 1 or 2 to enter a  level and then the users can play the game. Once the level is over the score is displayed and the users have a chance to play again.
