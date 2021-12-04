@@ -6,7 +6,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 
 ## Links to our project videos
 
--- add link to user story
+[User Story](https://www.youtube.com/watch?v=2xU98zj05_I)
 
 [Demo Video](https://youtu.be/0U_06Ww5UJA)
 
