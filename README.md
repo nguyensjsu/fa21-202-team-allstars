@@ -132,7 +132,7 @@ Command Pattern (for Tank movements, shoot, health features) by Guru Karthik
 
 Backlog
 
-![Backlog](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/Sprint%20log.png?raw=true)
+![Backlog](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/sprint.PNG)
 
 
 Burndown Chart
