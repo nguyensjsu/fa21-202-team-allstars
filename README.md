@@ -2,7 +2,7 @@
 
 ## Topic for our Team Project
 
-We decided to make a battle tanks game. For this game we would have 2 players on the same team fighting against a bunch of AI Tanks in the process.
+We decided to make a twin tanks game. For this game we would have 2 players on the same team fighting against a bunch of AI Tanks in the process.
 
 ## Links to our project videos
 
@@ -44,7 +44,7 @@ We decided to make a battle tanks game. For this game we would have 2 players on
 | Name                  | XP Core Value |
 | :---                  | :---          |
 | Suresh Mula           | Communication |
-| (name)                | (value)       |
+| Yash Trivedi          | Respect       |
 | (name)                | (value)       |
 | Mohamed Shafeeq       | Feedback      |
 | (name)                | (value)       |
