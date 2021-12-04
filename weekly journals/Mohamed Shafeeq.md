@@ -8,7 +8,7 @@ Feedback: Gathered feedback to keep the initial phase of the project to be simpl
 # Week 2
 Tasks worked on: Deciding how many strategies to set for bullet collision. Finalised on two strategies, "Health1Strategy" (after taking damages from the bullet), "Health0Strategy" (after health becomes zero). Created a skeleton for both the strategy classes. 
 
-Blockers None
+Blockers: None
 
 Feedback: Gave feedback on conducting meetings twice a week for efficient communication and flow of project. Gathered feedback on having AI tanks as enemies. 
 
