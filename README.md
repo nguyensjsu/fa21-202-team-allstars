@@ -103,10 +103,15 @@ Singleton pattern (for handling level) by Suresh Mula
 
 ![LevelHandlerSingletonClassDiagram](https://user-images.githubusercontent.com/89316778/144699945-7925aaa8-6b72-45a2-9780-6f12800abf7c.png)
 
+Strategy Pattern (for Bullet Collision) done by Mohamed Shafeeq
+
+![StrategyPattern_ClassDiagram](https://user-images.githubusercontent.com/89361239/144702744-8726ab1f-6003-4812-8e1c-c8edee8adcc6.png)
+
+
 
 
 ## Game Features
 
-1. 2 Levels in the gane
+1. 2 Levels in the game.
 2. 2 Player Game to enjoy with your friend
 3. Keeps Track of the Highscore to see if you are improving or not
