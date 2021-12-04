@@ -40,17 +40,49 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 
 [Guru Karthik](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/weekly%20journals/Guru%20Karthik.md)
 
-## XP Core Values
-| Name                  | XP Core Value |
-| :---                  | :---          |
-| Suresh Mula           | Communication |
-| Yash Trivedi          | Respect       |
-| Sachin Pothukuchi     | Simplicity    |
-| Mohamed Shafeeq       | Feedback      |
-| (name)                | (value)       |
-| (name)                | (value)       |
+## XP Core Values and Design Patterns Implemented
+| Name                  | XP Core Value |  Design Pattern |  Implemented On |
+| :---                  | :---          |  :---           |  :---           |
+| Suresh Mula           | Communication |  Strategy       |  Level Creation |
+| Yash Trivedi          | Respect       |  Singleton      |  ScoreManger    |
+| Sachin Pothukuchi     | Simplicity    |  Decorator      |  Level          |
+| Mohamed Shafeeq       | Feedback      |  Strategy       | Tank Damage Update |
+| (name)                | (value)       |  State Machine  | NPC Tank   |
+| (name)                | (value)       |  Command   | Tank Movement
 
-##
+## Summary of our Project
+Our game works by clicking on either 1 or 2 to enter a  level and then the users can play the game. Once the level is over the score is displayed and the users have a chance to play again.
+
+
+Here are a few screenshots
+
+### Main Menu
+
+![Main Menu](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/mainPage.png?raw=true)
+
+
+### In A Level
+
+![Level](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/inALevel.png?raw=true)
+
+
+### End of Level
+
+
+![End](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/EndLevel.png?raw=true)
+
+
+## High Level Diagrams
+
+### UI WireFrame
+
+![WireFrame](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/UI%20Wireframe%20Final.png?raw=true)
+
+
+### Component Diagram
+
+![Component](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/Component%20Diagram.jpeg?raw=true)
+
 
 
 
