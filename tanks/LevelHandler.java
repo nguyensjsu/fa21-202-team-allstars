@@ -16,7 +16,7 @@ public class LevelHandler {
     static int[][] tankCordinates={{125,25},{675,275},{375,25},{25,475},{675,475},{275,425}};
     static final int AI_TANK_LIMIT_ON_SCREEN = 3;
     
-    static final int AI_TANK_TOTAL = 10;
+    static final int AI_TANK_TOTAL = 15;
     
     static final int PLAYER_DEAFULT_LIVES = 3;
     static final int PLAYER_DEAFULT_HEALTH = 3;
@@ -89,6 +89,7 @@ public class LevelHandler {
         
         int aiTanksToAdd = AI_TANK_TOTAL - AITanksCreated;
         aiTanksToAdd = (aiTanksToAdd > AI_TANK_LIMIT_ON_SCREEN) ? AI_TANK_LIMIT_ON_SCREEN : aiTanksToAdd;
+        aiTanksToAdd = aiTanksToAdd - currentAITankCount;
         for(int i=0; i<aiTanksToAdd; i++){
             newEnemyTank();
         }
