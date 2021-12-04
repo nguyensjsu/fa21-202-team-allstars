@@ -109,34 +109,6 @@ public class LevelDecorator extends World implements ILevelInterface
     }
     
     
-    public boolean isPlayerOneALive(){
-        return base.isPlayerOneALive();
-    }
-    
-    public boolean isPlayerTwoALive(){
-        return base.isPlayerTwoALive();
-    }
-    
-    public int getPlayerOneLives(){
-        return base.getPlayerOneLives();
-    }
-    
-    public int getPlayerTwoLives(){
-        return base.getPlayerTwoLives();
-    }
-    
-    public void decreasePlayerOneHealth(int damage){
-        base.decreasePlayerOneHealth(damage);
-    }
-    
-    public void decreasePlayerTwoHealth(int damage){
-        base.decreasePlayerTwoHealth(damage);
-    }
-    
-    public void moveToNextLevel(){
-        base.moveToNextLevel();
-    }
-    
     public int[][] getCurrentTankStatus() {
         return base.getCurrentTankStatus();
     }

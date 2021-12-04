@@ -10,6 +10,7 @@ public class NPCTankBrain implements NPCTankBrainInterface{
     private TurnRightState turnRight;
     private NPCTankBrainStateInterface currentState;
     private ArrayList<NPCTankBrainObserverInterface> observers;
+    
     public NPCTankBrain(){
         this.damaged=new DamagedState(this);        
         this.defeat=new DefeatState(this);        

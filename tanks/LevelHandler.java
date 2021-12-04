@@ -43,12 +43,6 @@ public class LevelHandler {
         
         //checking endgame
         if((p1Tank.isEmpty() && p2Tank.isEmpty()) || npcs.isEmpty()) {
-            int[][] stats = getCurrentTankStatus();
-            int score = 0;
-            score += stats[0][0] * 10 + stats[0][1] * 2;
-            score += stats[1][0] * 10 + stats[1][1] * 2;
-            score += (AITanksCreated - currentAITankCount) * 5; // 5points per tank
-            //System.out.println("Score: " + score);
             EndGame end = new EndGame();
             Greenfoot.setWorld(end);
         }
@@ -144,39 +138,6 @@ public class LevelHandler {
             AITankCreated();
         }
     }
-    
-    public boolean isPlayerOneALive() {
-        return this.playerOneALive;   
-    }
-    public boolean isPlayerTwoALive() {
-       return this.playerTwoALive;   
-    }
-
-    public int getPlayerOneLives() {
-        return this.playerOneLives;
-    }
-    public int getPlayerTwoLives() {
-        return this.playerTwoLives;
-    }
-
-    public void decreasePlayerOneHealth(int damage) {
-        this.playerOneHealth -= damage;
-        if(this.playerOneHealth <= 0){
-            this.playerOneLives--;
-            playerOneHealth = PLAYER_DEAFULT_HEALTH;
-            if(this.playerOneLives == 0)
-                playerOneALive= false;
-        }
-    }
-    public void decreasePlayerTwoHealth(int damage) {
-        this.playerTwoHealth -= damage;
-        if(this.playerTwoHealth <= 0){
-            this.playerTwoLives--;
-            playerTwoHealth = PLAYER_DEAFULT_HEALTH;
-            if(this.playerTwoLives == 0)
-                playerTwoALive= false;
-        }
-    }
 
     public int[][] getCurrentTankStatus(){
         int[][] status = new int[3][2];
@@ -217,5 +178,13 @@ public class LevelHandler {
     
     public void reset(){
         levelHandler = null;
+    }
+    
+    public int getAITanksCreated() {
+        return AITanksCreated;
+    }
+    
+    public int getCurrentAITankCount() {
+        return currentAITankCount;
     }
 }

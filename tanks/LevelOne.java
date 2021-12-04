@@ -37,35 +37,9 @@ public class LevelOne extends World implements ILevelInterface {
         P2Tank p2Tank = new P2Tank();
         dec.addObject(p2Tank, 425, 575);
     }
-
-    public void moveToNextLevel(){
-        if(nextLevel != null)
-            Greenfoot.setWorld(nextLevel);
-    }
     
     public void createEnemyTanks(){
         levelHandler.createEnemyTanks();
-    }
-
-    public boolean isPlayerOneALive() {
-        return levelHandler.isPlayerOneALive();   
-    }
-    public boolean isPlayerTwoALive() {
-       return levelHandler.isPlayerTwoALive();   
-    }
-
-    public int getPlayerOneLives() {
-        return levelHandler.getPlayerOneLives();
-    }
-    public int getPlayerTwoLives() {
-        return levelHandler.getPlayerTwoLives();
-    }
-
-    public void decreasePlayerOneHealth(int damage) {
-        levelHandler.decreasePlayerOneHealth(damage);
-    }
-    public void decreasePlayerTwoHealth(int damage) {
-        levelHandler.decreasePlayerTwoHealth(damage);
     }
 
     public int[][] getCurrentTankStatus(){
