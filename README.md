@@ -6,7 +6,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 
 ## Links to our project videos
 
-[User Story](https://www.youtube.com/watch?v=2xU98zj05_I)
+[User Story](https://youtu.be/7N8LDRoHwr8)
 
 [Demo Video](https://youtu.be/0U_06Ww5UJA)
 
@@ -53,6 +53,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 ## Summary of our Project
 The project is about a game developed using Greenfoot in java. This game revloves around two player battle tanks fighting against enemy tanks in order to win the game. The tanks have movement controls, rotation controls and shoot functionality. Using these features, the tanks move in any desired direction in search of enemy tanks to find and kill them. Players'  score depends on the respective numebr of enemy tanks damaged or killed. The game ends when either all enemy tanks are destroyed or if both the players' lives are exhausted. The players' high score is then recorded for comparision with subsequent rounds' score.
 
+The game was implemented from scratch, we decided the gameplay and game design by ourselves. For each significant feature the design patterns were chosen appropriately. Any blockers in the project we opened issues to keep track of them and whoever responsible for that component solved the respective issues. Initially we decided to have just two tanks in the game environment, later we decided to have AI tanks in the gameplay. 
 
 Here are a few screenshots
 
@@ -110,6 +111,10 @@ Strategy Pattern (for Bullet Collision) done by Mohamed Shafeeq
 Singleton Pattern (for Score Management) done by Yash Trivedi
 
 ![Twin Tanks Class Diagram](https://user-images.githubusercontent.com/89321789/144721842-fc4b4416-0c23-4784-b412-16f7c8253426.png)
+
+Command Pattern (for Tank movements, shoot, health features) by Guru Karthik
+
+![CommandPattern](https://user-images.githubusercontent.com/89321642/144723466-504f6e0f-ab52-493b-8e0f-fd213f6356d2.png)
 
 
 
