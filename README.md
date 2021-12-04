@@ -53,6 +53,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 ## Summary of our Project
 The project is about a game developed using Greenfoot in java. This game revloves around two player battle tanks fighting against enemy tanks in order to win the game. The tanks have movement controls, rotation controls and shoot functionality. Using these features, the tanks move in any desired direction in search of enemy tanks to find and kill them. Players'  score depends on the respective numebr of enemy tanks damaged or killed. The game ends when either all enemy tanks are destroyed or if both the players' lives are exhausted. The players' high score is then recorded for comparision with subsequent rounds' score.
 
+The game was implemented from scratch, we decided the gameplay and game design by ourselves. For each significant feature the design patterns were chosen appropriately. Any blockers in the project we opened issues to keep track of them and whoever responsible for that component solved the respective issues. Initially we decided to have just two tanks in the game environment, later we decided to have AI tanks in the gameplay. 
 
 Here are a few screenshots
 
