@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EndGame here.
+ * Displays Exit Page and Player Scores
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Suresh Goud Mula 
+ * @1.0
  */
 public class EndGame extends World
 {

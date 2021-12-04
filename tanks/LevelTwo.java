@@ -2,6 +2,12 @@ import java.util.Random;
 import java.util.Arrays;
 import greenfoot.*;
 
+/**
+ * Creates Level Two game 
+ * 
+ * @Suresh Goud Mula 
+ * @1.0
+ */
 public class LevelTwo extends World implements ILevelInterface{
 
     private LevelHandler levelHandler;
@@ -18,10 +24,16 @@ public class LevelTwo extends World implements ILevelInterface{
         levelHandler.run();
     }
     
+    /*
+     * Associate with LevelDecorator
+     */
     public void setWorld(World dec){
         this.dec = dec;
     }
     
+    /*
+     * Builds Level Two
+     */
     public void createLevel(){
         levelHandler =  LevelHandler.getInstance();
         createBricks();
@@ -30,24 +42,39 @@ public class LevelTwo extends World implements ILevelInterface{
         createEnemyTanks();
     }
     
+    /*
+     * Creates Player One Tank
+     */
     public void createP1Tank(){
         P1Tank p1Tank = new P1Tank();
         dec.addObject(p1Tank, 25, 325);
     }
     
+    /*
+     * Creates Player Two Tank
+     */
     public void createP2Tank(){
         P2Tank p2Tank = new P2Tank();
         dec.addObject(p2Tank, 425, 575);
     }
     
+    /*
+     * Creates AI Tanks
+     */
     public void createEnemyTanks(){
         levelHandler.createEnemyTanks();
     }
 
+    /*
+     * Return Player and AI tanks status like health, lives
+     */
     public int[][] getCurrentTankStatus(){
         return levelHandler.getCurrentTankStatus();
     }
 
+    /*
+     * Create Bricks objects and adds to the LevelTwo World
+     */
     public void createBricks() {
         Brick brick1 = new Brick();
         dec.addObject(brick1,125,25);

@@ -1,10 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TutorialPage here.
+ * The main purpose of this World is to have guidelines for the game
+ * It shows how to control playerOne and playerTwo tanks
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Suresh Goud Mula 
+ * @1.0
  */
 public class TutorialPage extends World
 {
@@ -21,18 +22,21 @@ public class TutorialPage extends World
     public TutorialPage()
     {    
         super(700, 600, 1); 
-        
         showGuidelines();
         setBackground();
     }
 
-    
+    //This method return a getImage with specific font
     public GreenfootImage getImage(){
         GreenfootImage image = new GreenfootImage(300, 300);
         image.setFont(new Font("Verdana", 20));
         return image;
     }
     
+
+    /*
+     * It add Text Images to the world
+     */
     public void showGuidelines(){
         GreenfootImage playerOneHeadingImage = getImage();        
         playerOneHeadingImage.drawString("Player One Controls", 20, 20);
@@ -61,6 +65,9 @@ public class TutorialPage extends World
         
     }
 
+    /*
+     * Return PlayerOne controls as String Value
+     */
     public String getPlayerOneControls(){
         String out = "";
         out += "Up Arrow :: move forward\n";
@@ -77,6 +84,9 @@ public class TutorialPage extends World
         image.fillRect(700, 0, 200, 600);
     }
     
+    /*
+     * Return PlayerTwo controls as String Value
+     */
     public String getPlayerTwoControls(){
         String out = "";
         out += "W :: move forward\n";

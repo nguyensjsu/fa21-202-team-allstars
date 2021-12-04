@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Exit here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Suresh Goud Mula 
+ * @1.0
  */
 public class Exit extends Actor
 {
@@ -13,20 +13,20 @@ public class Exit extends Actor
         image.scale(175, 100);
     }
     /**
-     * Act - do whatever the Exit wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Act - Whenever user clicks on exit button. The game gets reset
      */
     public void act()
     {
+        
         if (Greenfoot.mousePressed(this))
-    {
+        {
         resetGame();
         Greenfoot.setWorld(new MainMenu());
-    }
+        }
         
     }
     
-    public void resetGame(){
+    private void resetGame(){
         LevelHandler levelHandler = LevelHandler.getInstance();
         levelHandler.reset();
         ScoreManager.reset();

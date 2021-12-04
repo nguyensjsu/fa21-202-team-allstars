@@ -1,6 +1,6 @@
 import greenfoot.Greenfoot;
 /**
- * Write a description of class LevelBuilder here.
+ * Builds components for the Level
  * 
  * @SureshGoudMula
  * @version (a version number or a date)
@@ -21,6 +21,10 @@ public class LevelBuilder
         this.level = level;
     }
     
+    /*
+     * Attach LevelDecorator to the Level
+     * And then creates the level
+     */
     public void buildLevel(){
         LevelDecorator levelDecorator = new LevelDecorator(level);
         level.setWorld(levelDecorator);

@@ -1,7 +1,10 @@
 import greenfoot.World;
 
 /**
- * LevelOne
+ * ILevelInterface declare methods that has to be implemented by Level classes
+ * 
+ * @Suresh Goud Mula
+ * @1.0
  */
 public interface ILevelInterface{
     public void createLevel();

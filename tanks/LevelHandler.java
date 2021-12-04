@@ -3,6 +3,12 @@ import java.util.Random;
 import greenfoot.*;
 import java.util.List;
 
+/**
+ * It Handles common functionalities for all Levels
+ * 
+ * @Suresh Goud Mula
+ * @1.0
+ */
 public class LevelHandler {
 
     static boolean[] tankCordinatesAvaliability = {true, true, true, true, true, true};
@@ -86,6 +92,9 @@ public class LevelHandler {
         }
     }
     
+    /*
+     * Setting Decorator
+     */
     public void setDecorator(LevelDecorator decorator){
         this.decorator = decorator;
     }
@@ -105,24 +114,15 @@ public class LevelHandler {
         playerTwoALive = true;
     }
     
+    /*
+     * creates Enemy Tanks
+     */
     public void createEnemyTanks(){
         for(int i=0; i<AI_TANK_LIMIT_ON_SCREEN;i++){
             newEnemyTank();
         }
     }
     
-    public void newPlayerTank(Tank tank) {
-        Random ran = new Random();
-        int locationIndex = ran.nextInt(totalLocations);
-        while(!tankCordinatesAvaliability[locationIndex]){
-            locationIndex = ran.nextInt(totalLocations);
-        }
-        int[] location = tankCordinates[locationIndex];
-        tankCordinatesAvaliability[locationIndex] = false;
-        decorator.addObject(tank, location[0], location[1]);
-        tankCordinatesAvaliability[locationIndex] = true;
-    }
-
     public void newEnemyTank(){
         if(isCreatingAIPossible()){
             Random ran = new Random();
@@ -138,7 +138,25 @@ public class LevelHandler {
             AITankCreated();
         }
     }
+    
+    /*
+     * Creates New Player Tank
+     */
+    public void newPlayerTank(Tank tank) {
+        Random ran = new Random();
+        int locationIndex = ran.nextInt(totalLocations);
+        while(!tankCordinatesAvaliability[locationIndex]){
+            locationIndex = ran.nextInt(totalLocations);
+        }
+        int[] location = tankCordinates[locationIndex];
+        tankCordinatesAvaliability[locationIndex] = false;
+        decorator.addObject(tank, location[0], location[1]);
+        tankCordinatesAvaliability[locationIndex] = true;
+    }
 
+    /*
+     * Return current Tank status
+     */
     public int[][] getCurrentTankStatus(){
         int[][] status = new int[3][2];
         status[0] = getPlayerOneStatus();
@@ -161,11 +179,17 @@ public class LevelHandler {
         return playerTwoStatus;
     }
 
+    /*
+     * Update status whenever a new AITank created
+     */
     public void AITankCreated(){
         this.AITanksCreated++;
         this.currentAITankCount++;
     }
     
+    /*
+     * Checks if new AITanks can be created or not
+     */
     public boolean isCreatingAIPossible(){
         if(AITanksCreated >= AI_TANK_TOTAL)
             return false;
