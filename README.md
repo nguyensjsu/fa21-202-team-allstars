@@ -85,4 +85,17 @@ Here are a few screenshots
 
 
 
+### Class Diagrams For Each of Our Patterns
+
+
+Decorator (for level) done by Sachin
+
+![Decorator](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/Class%20Diagram%20Decorator.jpg?raw=true)
+
+
+StateMachine (for NPC Tank) done by Ganesh
+
+![StateMachine](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/NPCTankStateTransitionChart.png?raw=true)
+
+![StateMachine 2](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/ClassDiagramTankBrain.png?raw=true)
 
