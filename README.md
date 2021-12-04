@@ -40,4 +40,15 @@ We decided to make a battle tanks game. For this game we would have 2 players on
 
 [Guru Karthik](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/weekly%20journals/Guru%20Karthik.md)
 
+## XP Core Values
+| Name                  | XP Core Value |
+| :---                  | :---          |
+| Suresh Mula           | Communication |
+| (name)                | (value)       |
+| (name)                | (value)       |
+| Mohamed Shafeeq       | Feedback      |
+| (name)                | (value)       |
+| (name)                | (value)       |
+
+
 
