@@ -10,6 +10,8 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 
 [Demo Video](https://youtu.be/0U_06Ww5UJA)
 
+-- extra credit recording of a scrum meeting?
+
 ## Team members
 
 [Sachin Pothukuchi](https://github.com/raspuchin)
@@ -49,7 +51,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 | Guru Karthik          | Courage       |
 
 ## Summary of our Project
-Our game works by clicking on either 1 or 2 to enter a  level and then the users can play the game. Once the level is over the score is displayed and the users have a chance to play again.
+The project is about a game developed using Greenfoot in java. This game revloves around two player battle tanks fighting against enemy tanks in order to win the game. The tanks have movement controls, rotation controls and shoot functionality. Using these features, the tanks move in any desired direction in search of enemy tanks to find and kill them. Players'  score depends on the respective numebr of enemy tanks damaged or killed. The game ends when either all enemy tanks are destroyed or if both the players' lives are exhausted. The players' high score is then recorded for comparision with subsequent rounds' score.
 
 
 Here are a few screenshots
