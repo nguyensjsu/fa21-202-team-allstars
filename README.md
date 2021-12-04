@@ -47,7 +47,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 | Yash Trivedi          | Respect       |  Singleton      |  ScoreManger    |
 | Sachin Pothukuchi     | Simplicity    |  Decorator      |  Level          |
 | Mohamed Shafeeq       | Feedback      |  Strategy       | Tank Damage Update |
-| (name)                | (value)       |  State Machine  | NPC Tank   |
+| Ganesh S Tulshibagwale                | Simplicity       |  State Machine  | NPC Tank   |
 | (name)                | (value)       |  Command   | Tank Movement
 
 ## Summary of our Project
