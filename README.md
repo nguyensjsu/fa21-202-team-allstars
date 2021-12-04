@@ -114,6 +114,7 @@ Singleton Pattern (for Score Management) done by Yash Trivedi
 
 Command Pattern (for Tank movements, shoot, health features) by Guru Karthik
 
+
 ![CommandPattern](https://user-images.githubusercontent.com/89321642/144723466-504f6e0f-ab52-493b-8e0f-fd213f6356d2.png)
 
 
