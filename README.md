@@ -41,14 +41,14 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 [Guru Karthik](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/weekly%20journals/Guru%20Karthik.md)
 
 ## XP Core Values and Design Patterns Implemented
-| Name                  | XP Core Value |  Design Pattern |  Implemented On |
-| :---                  | :---          |  :---           |  :---           |
-| Suresh Mula           | Communication |  Strategy       |  Level Creation |
-| Yash Trivedi          | Respect       |  Singleton      |  ScoreManger    |
-| Sachin Pothukuchi     | Simplicity    |  Decorator      |  Level          |
-| Mohamed Shafeeq       | Feedback      |  Strategy       | Tank Damage Update |
-| Ganesh S Tulshibagwale| Simplicity    |  State Machine  | NPC Tank   |
-| (name)                | (value)       |  Command   | Tank Movement
+| Name                  | XP Core Value |
+| :---                  | :---          |
+| Suresh Mula           | Communication |
+| Yash Trivedi          | Respect       |
+| Sachin Pothukuchi     | Simplicity    |
+| Mohamed Shafeeq       | Feedback      |
+| Ganesh S Tulshibagwale| Simplicity    |
+| (name)                | (value)       |
 
 ## Summary of our Project
 Our game works by clicking on either 1 or 2 to enter a  level and then the users can play the game. Once the level is over the score is displayed and the users have a chance to play again.
