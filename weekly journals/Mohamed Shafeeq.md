@@ -1,5 +1,5 @@
 # Week 1
-Tasks worked on: Deciding a design pattern for implementing bullet collison with tank. Came up with the design pattern to implement bullet collision feature. Set up the interface for the strategies.
+Tasks worked on: Deciding a design pattern for implementing bullet collison with tank. Came up with the Strategy design pattern to implement bullet collision feature. Set up the interface for the strategies.
 
 Blockers: None
 
