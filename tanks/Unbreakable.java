@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
+ * Unbreakable object is like a steel block or something similar, cannot be broken by bullets, does not move
  * @author Sachin Pothukuchi 
  */
 public class Unbreakable extends UnmovableObjects
 {
-    static int[][] tankCordinates={{25,325},{425,575},{375,25}};
     public void bulletCollision() {
-        
+        //do nothing as unbreakable        
     }
 }

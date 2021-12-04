@@ -5,12 +5,16 @@ import java.util.List;
  */
 public class Bullet extends Actor
 {
-    static int speed = 5;
+    static int speed = 5; //set bullet speed
+    
+    //constructor
     public Bullet() {
         setRotation(0);
         GreenfootImage image = getImage();
         image.scale(30, 30);
     }
+    
+    //act to delete the bullet if at edge of the world, do bulletCollision with UnmovableObjects or Tanks
     public void act()
     {
         move(speed);

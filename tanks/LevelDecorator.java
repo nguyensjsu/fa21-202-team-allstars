@@ -19,20 +19,29 @@ public class LevelDecorator extends World implements ILevelInterface
     PlaceHolders P2PlaceHolderHealth;
     PlaceHolders AIPlaceHolderHealth;
     
+    /**
+     * Constructor
+     */
     public LevelDecorator(ILevelInterface base) {
         super(900, 600, 1);
         this.base = base;
     }
     
+    /**
+     * dont want to decorate
+     */
     public void setWorld(World dec) {
         //do nothing
     }
     
+    // act function called repeatedly, keep updating info on the side
     public void act() {
         base.act();
         updateInfo();
     }
     
+    
+    //create level, add barrier, set background for the barrier and initialize the side information
     public void createLevel() {
         base.createLevel();
         addBarrier();
@@ -40,6 +49,7 @@ public class LevelDecorator extends World implements ILevelInterface
         setInfo();
     }
     
+    //initializing the side information
     private void setInfo() {     
         
         //temp placeholder dont need reference to these
@@ -85,6 +95,8 @@ public class LevelDecorator extends World implements ILevelInterface
         addObject(AIPlaceHolderHealth, 850, 400);
     }
 
+    
+    //function to update the placeholders
     public void updateInfo() {
         int[][] stats = getCurrentTankStatus();
 
@@ -97,22 +109,25 @@ public class LevelDecorator extends World implements ILevelInterface
         AIPlaceHolderHealth.updateImage(Integer.toString(stats[2][1]));
     }
     
+    //set background for the side bar
     private void setBackground() {
         GreenfootImage image = getBackground();
         image.setColor(Color.LIGHT_GRAY);
         image.fillRect(700, 0, 200, 600);
     }
     
+    //add barrier between the level and the side information
     private void addBarrier(){
         Barrier barrier = new Barrier();
         addObject(barrier, 700, 300);
     }
     
-    
+    // get current tank status to display on the sidebar
     public int[][] getCurrentTankStatus() {
         return base.getCurrentTankStatus();
     }
     
+    //return this world, used in levelHandler to spawn tanks
     public World returnWorld() {
         return this;
     }

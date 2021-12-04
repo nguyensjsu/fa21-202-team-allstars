@@ -8,20 +8,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Barrier extends UnmovableObjects
 {
+    //constructor
     public Barrier() {
         super();
         GreenfootImage image = new GreenfootImage(5, 600);
         image.setColor(Color.BLACK);
         image.fill();
         this.setImage(image);
-    }
-    /**
-     * Act - do whatever the Barrier wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        // Add your action code here.
     }
     
     public void bulletCollision() {
