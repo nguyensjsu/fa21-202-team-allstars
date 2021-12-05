@@ -133,6 +133,12 @@ Singleton Pattern (for Score Management) done by Yash Trivedi
 
 ![Twin Tanks Class Diagram](https://user-images.githubusercontent.com/89321789/144721842-fc4b4416-0c23-4784-b412-16f7c8253426.png)
 
+ScoreManager is implemented using Singleton Design pattern. So that it can maintain all scores throughout the session. 
+getBestScore() keep track of best score throughout the session.
+addScore() adds 5points each time players destroy AI tank
+reset() resets the players score after each game
+getScore() calculate the score based on the health and lives of the player then added to original score
+
 Command Pattern (for Tank movements, shoot, health features) by Guru Karthik
 
 - Command pattern is used for implementing for tank movement controls
