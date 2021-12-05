@@ -123,6 +123,13 @@ Singleton Pattern (for Score Management) done by Yash Trivedi
 
 Command Pattern (for Tank movements, shoot, health features) by Guru Karthik
 
+Command pattern is used for implementing for tank movement controls
+
+-Interface used in this pattern is TankCommands which provides method to execute tank movement 
+-The keyboard key event handling classes i.e. UpKey, DownKey, LeftKey, RightKey implement TankCommands and provide their respective implementations for execute method
+-Abstract Class Tank holds references to each of the four key event classes.
+-The Player tank classes and enemy tank classes extend the abstract class Tank and thereby inherit the instances of the four key event classes.
+-Upon press of each direction keys, the command is passed on from the tank class to the respective direction class which shall then trigger the respective movement.
 
 ![CommandPattern](https://user-images.githubusercontent.com/89321642/144723466-504f6e0f-ab52-493b-8e0f-fd213f6356d2.png)
 
