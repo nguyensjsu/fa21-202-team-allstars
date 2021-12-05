@@ -10,7 +10,7 @@ We decided to make a twin tanks game. For this game we would have 2 players on t
 
 [Demo Video](https://youtu.be/0U_06Ww5UJA)
 
--- extra credit recording of a scrum meeting?
+[A Weekly Scrum](https://www.youtube.com/watch?v=5eIIFrw7QuU)
 
 ## Team members
 
