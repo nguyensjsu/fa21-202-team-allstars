@@ -127,7 +127,7 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
         }
     }
     //The NPCTank takes a point of damage
-    //Overloaded to change behavior from directly decrementing to informing the brain of the damage
+    //Overridden to change behavior from directly decrementing to informing the brain of the damage
     public void reduceHealth(){
         this.brain.takeDamage();
     }
