@@ -96,9 +96,21 @@ Decorator (for level) done by Sachin
 
 StateMachine (for NPC Tank) done by Ganesh
 
-![StateMachine](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/NPCTankStateTransitionChart.png?raw=true)
+![StateMachine](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/ClassDiagramTankBrain.png?raw=true)
 
-![StateMachine 2](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/ClassDiagramTankBrain.png?raw=true)
+![StateMachine 2](https://github.com/nguyensjsu/fa21-202-team-allstars/blob/main/images/NPCTankStateTransitionChart.png?raw=true)
+
+The State Machine design pattern is used to control the behavior of the NPCTanks
+-An NPCTank object keeps an NPCTankBrain object as an attribute.
+-Every frame, the NPCTank communicates what it senses to the NPCTankBrain, reads an order from the NPCTankBrain, and acts on it.
+-The state transition rules are as follows
+ -States cannot transition to their opposite. (for example DriveForward into DriveBackward, or vice versa) If you want to undo what you just did, you should have just stayed still from the start. This I believe was a contributing factor for the early versions' spastic and chaotic movement.
+ -Defeat has no transitions, not even self transitions, and all other states transition into Defeat on a zeroHealth event. The NPCTank is dead and about to be deleted
+ -All states except Damaged and Defeat transition to Damaged on a takeDamage event. The Damaged state goes to Rest instead, giving already damaged tanks get a grace period before redamaging.
+ -All states except Damaged and Shoot transition to Shoot on a seeEnemy event. Those two States transition to Rest instead; the tank is taking a moment to recover
+ -All states except Damaged, Shoot, and DriveForward transition to DriveForward on a seeFriend event. Damaged and Shoot go to Rest, and DriveForward usually goes to DriveForward with a chance to go to TurnLeft or Turn Right. I wanted to encourage NPCTanks to travel in packs but give followers a chance to break off and do their own thing too.
+ -On a seeWall event, all states exept Damged and Shoot (which both go to Rest) will randomly choose DriveBackward, TurnLeft, TurnRight, or Shoot. The exact weights vary between states, partly because of the above "no opposites" rule and partly to give extra weight to repeating the previous action to avoid jittery chaotic movement. The intended effet is that NPCTanks will avoid obstacles or open fire to clear a path. I included DriveBackward because I liked the idea of the tank backing up to make space for a turn or to get clear of the blast before shooting, even if the action isn't actually necessary.
+ -On a seeNothing event, all states except Damaged and Shoot (which both go to Rest) randomly choose DriveBackward, DriveForward, TurnLeft, or TurnRight. Unlike with seeWall, Shoot is unavailable because there is nothing to shoot at. The exact weights vary between states for similar reasons as seeWall. Further, TurnLeft and Turn Right cannot go to DriveBackward. If the tank "wanted" to go in that direction, it would have turned the opposite way and picked DriveForward.
 
 Singleton pattern (for handling level) by Suresh Mula
 
