@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class TwoButton here.
+ * The two button upon being clicked takes the user to level two of the game where they can play with their friend against the enemy AI tank
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Yash Trivedi) 
+ * @version (v1)
  */
 public class TwoButton extends Actor
 {

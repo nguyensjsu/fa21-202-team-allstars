@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MainMenu here.
+This is the class for the main menu page
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Yash Trivedi) 
+ * @version (v1)
  */
 public class MainMenu extends World
 {
@@ -18,6 +18,7 @@ public class MainMenu extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(700, 600, 1);
         showMainMenu();
+        prepare();
     }
 
     public void showMainMenu(){
@@ -30,5 +31,12 @@ public class MainMenu extends World
         addObject(twoButton,350,425);
         addObject(tutorial,575,525);
     }
-    
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+    }
 }

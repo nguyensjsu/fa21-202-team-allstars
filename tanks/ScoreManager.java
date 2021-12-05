@@ -1,8 +1,8 @@
 /**
- * Write a description of class ScoreManager here.
+ * ScoreManager implements Singleton Design Pattern to maintain scores throughout the session.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Yash Trivedi) 
+ * @version (v1)
  */
 public class ScoreManager  
 {
@@ -28,7 +28,7 @@ public class ScoreManager
         score = 0;
         bestScore = Integer.MIN_VALUE;
     }
-    
+ /*Calculates the score based on the health and lives of the players*/   
     public int getScore(){
         LevelHandler levelHandler = LevelHandler.getInstance();
         
@@ -37,15 +37,15 @@ public class ScoreManager
         score += stats[1][0] * 10 + stats[1][1] * 2;
         return score;
     }
-    
+  /*adds 5 points each time players destroy AI tank*/  
     public void addScore(){
         score += POINTS;
     }
-    
+/*Resets the player score after each game*/  
     public void reset(){
         score = 0;
     }
-
+/*Keeps track of Best Score throughout the session*/
     public int getBestScore(int score){
         if(bestScore < score){
             bestScore = score;

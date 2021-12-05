@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class OneButton here.
+ * The one button upon being clicked takes the user to level one of the game where they can play with their friend against the enemy AI tank
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Yash Trivedi) 
+ * @version (v1)
  */
 public class OneButton extends Actor
 {
@@ -16,6 +16,7 @@ public class OneButton extends Actor
     /**
      * Act - do whatever the Start wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
+     * 
      */
     public void act()
     {

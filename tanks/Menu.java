@@ -1,10 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Menu here.
+ * Image for the Menu Banner
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Yash Trivedi)
+ * @version (v1)
  */
 public class Menu extends Actor
 {
