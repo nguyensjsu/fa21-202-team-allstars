@@ -102,7 +102,7 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
     //The NPCTank reads the last order received from the brain and acts on it
     private void executeAction(){
         if(this.nextAction.equals("DamagedState")){
-            //
+            this.health--;
         }
         else if(this.nextAction.equals("DefeatState")){
             //
@@ -127,9 +127,8 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
         }
     }
     //The NPCTank takes a point of damage
-    //Overloaded to add informing the brain of the damage
+    //Overloaded to change behavior from directly decrementing to informing the brain of the damage
     public void reduceHealth(){
-        this.health--;
         this.brain.takeDamage();
     }
 }
