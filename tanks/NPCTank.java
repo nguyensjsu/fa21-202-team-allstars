@@ -13,11 +13,12 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
         image.scale(image.getWidth() - 45, image.getHeight() - 15);
         setImage(image);
     }
-    
-    /**
-     * Act - do whatever the P1Tank wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    //The NPCTank checks with the brain to update its orders
+    public void update(NPCTankBrainInterface observed){
+        this.nextAction=observed.getState().getClass().toString().substring(6);
+    }
+    //Every frame, the NPCTank will tell the brain what it senses,
+    //then act out what the brain says to do
     public void act(){
         if(this.health<=0){
             this.brain.zeroHealth();
@@ -25,9 +26,11 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
         this.senseEnviron();
         this.executeAction();
     }
+    //The NPCTank uses whatever senses are available and communicates relevant information to the brain
     private void senseEnviron(){
         processSight(lookAhead(this.lineOfSightDistance));
     }
+    //Having seen something, the NPCTank translates what it saw for the benefit of the brain
     private void processSight(Actor sight){
         if(sight==null){
             this.brain.seeNothing();
@@ -51,13 +54,52 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
             }
         }
     }
-    
-    public void reduceHealth(){
-        this.health--;
-        this.brain.takeDamage();
+    //The NPCTank looks ahead <distance> steps and reports the closest thing in that direction
+    //it loops up to <distance> times, checking further and further each time until it finds something
+    //or hits the maximum loop count
+    private Actor lookAhead(int distance){
+        int increment=25;
+        int rot=getRotation();
+        int n=1;
+        Actor result=null;
+        while(result==null&&n<=distance){
+            if(rot==0){
+                result=lookAheadRot0(n,increment);
+            }
+            else if(rot==90){
+                result=lookAheadRot90(n,increment);
+            }
+            else if(rot==180){
+                result=lookAheadRot180(n,increment);
+            }
+            else if(rot==270){
+                result=lookAheadRot270(n,increment);
+            }
+            n++;
+        }
+        return result;
     }
-    
-    
+    private Actor lookAheadRot0(int distance,int increment){
+        Actor result=null;
+        result=getOneObjectAtOffset(increment*distance,0,null);
+        return result;
+    }
+    private Actor lookAheadRot90(int distance,int increment){
+        Actor result=null;
+        result=getOneObjectAtOffset(0,increment*distance,null);
+        return result;
+    }
+    private Actor lookAheadRot180(int distance,int increment){
+        Actor result=null;
+        result=getOneObjectAtOffset(-increment*distance,0,null);
+        return result;
+    }
+    private Actor lookAheadRot270(int distance,int increment){
+        Actor result=null;
+        result=getOneObjectAtOffset(0,-increment*distance,null);
+        return result;
+    }
+    //The NPCTank reads the last order received from the brain and acts on it
     private void executeAction(){
         if(this.nextAction.equals("DamagedState")){
             //
@@ -84,49 +126,10 @@ public class NPCTank extends Tank implements NPCTankBrainObserverInterface{
             rightKey.execute();
         }
     }
-    public void update(NPCTankBrainInterface observed){
-        this.nextAction=observed.getState().getClass().toString().substring(6);
-    }
-    private Actor lookAhead(int distance){
-        int increment=25;
-        int rot=getRotation();
-        int n=1;
-        Actor result=null;
-        while(result==null&&n<=distance){
-            if(rot==0){
-                result=lookAheadRot0(distance,increment);
-            }
-            else if(rot==90){
-                result=lookAheadRot90(distance,increment);
-            }
-            else if(rot==180){
-                result=lookAheadRot180(distance,increment);
-            }
-            else if(rot==270){
-                result=lookAheadRot270(distance,increment);
-            }
-            n++;
-        }
-        return result;
-    }
-    private Actor lookAheadRot0(int distance,int increment){
-        Actor result=null;
-        result=getOneObjectAtOffset(increment*distance,0,null);
-        return result;
-    }
-    private Actor lookAheadRot90(int distance,int increment){
-        Actor result=null;
-        result=getOneObjectAtOffset(0,increment*distance,null);
-        return result;
-    }
-    private Actor lookAheadRot180(int distance,int increment){
-        Actor result=null;
-        result=getOneObjectAtOffset(-increment*distance,0,null);
-        return result;
-    }
-    private Actor lookAheadRot270(int distance,int increment){
-        Actor result=null;
-        result=getOneObjectAtOffset(0,-increment*distance,null);
-        return result;
+    //The NPCTank takes a point of damage
+    //Overloaded to add informing the brain of the damage
+    public void reduceHealth(){
+        this.health--;
+        this.brain.takeDamage();
     }
 }
